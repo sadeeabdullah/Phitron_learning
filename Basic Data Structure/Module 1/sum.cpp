@@ -13,7 +13,7 @@ int main()
     //     sum += i;
     // }
 
-    //using formula for less time 
+    //using formula for less time " time complexity"
     sum = (n * (n + 1)) / 2;
     
     cout << sum << endl;
