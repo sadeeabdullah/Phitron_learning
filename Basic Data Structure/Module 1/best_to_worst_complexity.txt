@@ -1,0 +1,17 @@
+N = 1000
+
+Constant:      O(1)        --> 1
+Linear:        O(N)        --> 1000
+Logarithmic:   O(logN)     --> 10
+Square root:   O(sqrt(N))  --> 32
+Quadratic:     O(N*N)      --> 1000000
+Linerithmic:   O(NlogN)    --> 10000
+
+best to worst|
+             |
+             ^ Constant:      O(1)  
+               Logarithmic:   O(logN)
+               Square root:   O(sqrt(N))
+               Linear:        O(N)
+               Linerithmic:   O(NlogN)
+               Quadratic:     O(N*N)
