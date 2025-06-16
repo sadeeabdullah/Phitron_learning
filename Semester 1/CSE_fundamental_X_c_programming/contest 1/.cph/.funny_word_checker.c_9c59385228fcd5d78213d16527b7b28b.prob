@@ -1,0 +1,1 @@
+{"name":"Local: funny_word_checker","url":"d:\\Phitron\\contest 1\\funny_word_checker.c","tests":[{"id":1746202347726,"input":"noon","output":"Yes"},{"id":1746202355053,"input":"funny","output":"No"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Phitron\\contest 1\\funny_word_checker.c","group":"local","local":true}

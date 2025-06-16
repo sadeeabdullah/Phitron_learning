@@ -1,0 +1,1 @@
+{"name":"Local: anagram","url":"d:\\Phitron\\contest 1\\anagram.c","tests":[{"id":1746205149790,"input":"listen silent","output":"Yes"},{"id":1746205157838,"input":"hello world","output":"No"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Phitron\\contest 1\\anagram.c","group":"local","local":true}

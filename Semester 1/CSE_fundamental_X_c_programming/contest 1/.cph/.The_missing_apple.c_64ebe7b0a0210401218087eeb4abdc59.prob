@@ -1,0 +1,1 @@
+{"name":"Local: The_missing_apple","url":"d:\\Phitron\\contest 1\\The_missing_apple.c","tests":[{"id":1746202259344,"input":"12 5 4","output":"11"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Phitron\\contest 1\\The_missing_apple.c","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: divisiblity_by_3","url":"d:\\Phitron\\contest 1\\divisiblity_by_3.c","tests":[{"id":1746203060661,"input":"5\n12345","output":"YES"},{"id":1746203070014,"input":"4\n1234","output":"NO"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Phitron\\contest 1\\divisiblity_by_3.c","group":"local","local":true}

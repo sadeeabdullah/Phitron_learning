@@ -1,0 +1,1 @@
+{"name":"Local: count_me_2","url":"d:\\Phitron\\assisgnments\\assigment 3(Mid_term)\\count_me_2.c","tests":[{"id":1745521829804,"input":"thefoxisgone","output":"7"},{"id":1745521842687,"input":"sjxapw","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Phitron\\assisgnments\\assigment 3(Mid_term)\\count_me_2.c","group":"local","local":true}

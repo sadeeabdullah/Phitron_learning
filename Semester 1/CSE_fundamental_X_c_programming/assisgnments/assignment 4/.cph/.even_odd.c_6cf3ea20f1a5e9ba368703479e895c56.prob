@@ -1,0 +1,1 @@
+{"name":"Local: even_odd","url":"d:\\Phitron\\assisgnments\\assignment 4\\even_odd.c","tests":[{"id":1746719761634,"input":"5\n1 2 3 4 5","output":"2 3"},{"id":1746719776143,"input":"6\n0 4 0 6 5 3","output":"4 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Phitron\\assisgnments\\assignment 4\\even_odd.c","group":"local","local":true}
