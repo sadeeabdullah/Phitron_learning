@@ -60,5 +60,18 @@ int main()
         cout << x << " "; // output: 1 3 4 4 5  
     }
     cout << endl;
+
+    vector<int> l = {1, 3, 45, 5, 3, 5, 5};
+
+    //replacing vector element
+    // replace(vector.begin(),vector.end(),value,replace_value);
+    // replace(l.begin(), l.end(), 5, 17);
+    // let only replace value and keep last element outside of the replacing modification
+    replace(l.begin(), l.end() - 1, 5, 17);
+    for(int x : l)
+    {
+        cout << x << " ";
+    }
+    cout << endl;
     return 0;
 }
