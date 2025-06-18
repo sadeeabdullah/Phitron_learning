@@ -1,0 +1,2 @@
+STL --> Standard Template Library
+Vector --> Behind the scene it works as a dynamic array. It is template libray because it only works with array but also with every data types. Meanwhile string only works with char array that is why string is not a template library.
