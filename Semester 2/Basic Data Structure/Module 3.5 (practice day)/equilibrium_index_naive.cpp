@@ -12,10 +12,10 @@ int main()
     
     for (int i = 0; i < n; i++)
     {
-        //let's assume that index 1 is the equilibrium index
-        int assume_equilibrium = i;
+        //let's assume that index i is the equilibrium index
+        int assume_equilibrium = i; 
         long long sum_bfr_eqlbrm = 0;
-        for (int j = 0; j < assume_equilibrium; j++)
+        for (int j = 0; j < assume_equilibrium; j++) // in the first iteration the 
         {
             sum_bfr_eqlbrm += a[j];
         }
@@ -25,11 +25,7 @@ int main()
             sum_aft_eqlbrm += a[j];
         }
 
-        if(sum_aft_eqlbrm > sum_bfr_eqlbrm)
-        {
-            assume_equilibrium++;
-        }
-        else if(sum_aft_eqlbrm == sum_bfr_eqlbrm)
+         if(sum_aft_eqlbrm == sum_bfr_eqlbrm)
         {
             cout << i << endl;
             break;
