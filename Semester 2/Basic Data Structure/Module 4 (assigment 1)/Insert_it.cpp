@@ -9,7 +9,7 @@ int main()
     {
         cin >> a[i];
     }
-    
+
     int m;
     cin >> m;
     vector<int> b(m);
@@ -17,32 +17,26 @@ int main()
     {
         cin >> b[i];
     }
-    
+
     int x;
     cin >> x;
 
     // after taking 2 array as input we will take a new array to add all these element in one array
-    vector<int> UpdatedArray;
+    vector<int> UpdatedArray(n + m);
     for (int i = 0; i < n + m; i++)
     {
-        if(i < x)
-        {
-            UpdatedArray.push_back(a[i]);
-        }
-        else if(i >= x && i < x + m)
-        {
-            UpdatedArray.push_back(b[i - x]);
-        }
-        else if(i >= m)
-        {
-            UpdatedArray.push_back(a[i - m]);
-        }
+        if (i < x)
+            UpdatedArray[i] = a[i];
+        else if (i >= x && i < x + m)
+            UpdatedArray[i] = b[i - x];
+        else 
+            UpdatedArray[i] = a[i - m];
     }
 
-    for(int element: UpdatedArray)
+    for (int element : UpdatedArray)
     {
         cout << element << " ";
     }
-    
+
     return 0;
 }
