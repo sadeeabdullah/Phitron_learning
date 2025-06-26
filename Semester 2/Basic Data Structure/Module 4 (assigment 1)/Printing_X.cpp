@@ -5,39 +5,48 @@ int main()
     int n;
     cin >> n;
 
-    if(n > 2)
+    int space = n - 2;
+    int space_bef = 0;
+    for (int i = n / 2; i > 0; i--)
     {
-        for (int i = 3; i <= n; i += 2)
-    {
-        cout << '\\';
-        for (int space = round(i / 2); space > 0; space--)
+        // for loop for printing space before
+        for (int i = 0; i < space_bef; i++)
         {
             cout << " ";
         }
-        cout << '/' << endl;
-    }
-    }
-    
-    // printing space before x
-    // for (int space_bef = )
-    // {
-    //     /* code */
-    // }
 
-    cout << endl << "X" << endl;
-    
-    if(n > 2)
-    {
-        for (int i = 3; i <= n; i += 2)
-    {
-        cout << '/';
-        for (int space = round(i / 2); space > 0; space--)
+        cout << "\\";
+        for (int i = space; i > 0; i--)
         {
             cout << " ";
         }
-        cout << '\\' << endl;
+        cout << "/" << endl;
+        space -= 2;
+        space_bef++;
     }
+    for(int i = space_bef; i > 0; i--)
+    {
+        cout << " ";
     }
-    
+    cout << "X" << endl;
+    space_bef--;
+    for (int i = n / 2; i > 0; i--)
+    {
+        // for loop for printing space before
+        for (int i = space_bef - 1; i >= 0; i--)
+        {
+            cout << " ";
+        }
+
+        cout << "/";
+        for (int i = 0; i <= space + 1; i++)
+        {
+            cout << " ";
+        }
+        cout << "\\" << endl;
+        space += 2;
+        space_bef--;
+    }
+
     return 0;
 }
