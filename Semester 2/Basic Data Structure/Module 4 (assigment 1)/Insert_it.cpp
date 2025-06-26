@@ -22,18 +22,9 @@ int main()
     cin >> x;
 
     // after taking 2 array as input we will take a new array to add all these element in one array
-    vector<int> UpdatedArray(n + m);
-    for (int i = 0; i < n + m; i++)
-    {
-        if (i < x)
-            UpdatedArray[i] = a[i];
-        else if (i >= x && i < x + m)
-            UpdatedArray[i] = b[i - x];
-        else 
-            UpdatedArray[i] = a[i - m];
-    }
+    a.insert(a.begin() + x, b.begin(), b.end());
 
-    for (int element : UpdatedArray)
+    for (int element : a)
     {
         cout << element << " ";
     }
