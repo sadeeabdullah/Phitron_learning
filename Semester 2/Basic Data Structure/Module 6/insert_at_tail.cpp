@@ -14,7 +14,7 @@ public:
     }
 };
 
-void insert_at_tail(Node* &head, int val)
+void insert_at_tail(Node* &head, int val) // TC: O(N)
 {
     // we are creating the node we need to connect or insert at the  end
     Node *newNode = new Node(val);
@@ -28,6 +28,7 @@ void insert_at_tail(Node* &head, int val)
     // we need go to the last node so here we will use tmp_head node
     Node *tmp_head = head;
     while (tmp_head->next != NULL) // when condition break we will be in the last node
+
     {
         // now we will set the tmp_head to tmp_head->next
         tmp_head = tmp_head->next;

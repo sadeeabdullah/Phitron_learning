@@ -14,7 +14,7 @@ public:
     }
 };
 
-void insert_at_any_pos(Node* &head, int idx, int val)
+void insert_at_any_pos(Node* &head, int idx, int val) // time complexity O(1)
 {
     // creating new node that i will insert
     Node* newNode = new Node(val);
@@ -29,7 +29,7 @@ void insert_at_any_pos(Node* &head, int idx, int val)
     tmp->next = newNode; // connecting the node with the previous node
 }
 
-void print_linked_list(Node* head)
+void print_linked_list(Node* head) // TC: O(N)
 {
     
     while (head != NULL)
