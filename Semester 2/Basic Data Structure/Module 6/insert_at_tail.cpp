@@ -23,7 +23,7 @@ void insert_at_tail(Node* &head, int val)
     if(head == NULL)
     {
         head = newNode;
-        return; // we need to use return otherwise the whole function will be executed;
+         return;// we need to use return otherwise the whole function will be executed;
     }
     // we need go to the last node so here we will use tmp_head node
     Node *tmp_head = head;
