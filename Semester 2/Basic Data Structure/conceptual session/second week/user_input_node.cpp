@@ -22,6 +22,13 @@ void insert_at_tail(Node* &head,Node* &tail, int val)
     // first we will create new node
     Node* new_node = new Node(val);
 
+    if(head == NULL)
+    {
+        head = new_node;
+        tail = new_node;
+        return; // as we dont need to connect anyting or to any node we have return;
+    }
+
     // we will connect the memory location to the tail and move the tail on it so that we can add another value in the tail next time
     tail->next = new_node;
     tail = new_node;
@@ -40,6 +47,7 @@ void print_linkedList(Node* head)
 
 int main()
 {
+    //as we are adding or inserting node in the linked list initially the new linked list is blank so the head and tail both is pointed to NULL
     Node* head = NULL;
     Node* tail = NULL;
 
@@ -57,6 +65,8 @@ int main()
 
         insert_at_tail(head,tail,x);
     }
+
+    print_linkedList(head);
     
     return 0;
 }
