@@ -1,11 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//creating node
-
 class Node
 {
-    public:
+public:
     int val;
     Node* next;
 
@@ -16,25 +14,21 @@ class Node
     }
 };
 
-//making the function to add or insert element at the tail
-void insert_at_tail(Node* &head,Node* &tail, int val)
+void insert_at_tail(Node* &head, Node* &tail, int val)
 {
-    // first we will create new node
     Node* new_node = new Node(val);
 
     if(head == NULL)
     {
         head = new_node;
         tail = new_node;
-        return; // as we dont need to connect anyting or to any node we have return;
+        return;
     }
 
-    // we will connect the memory location to the tail and move the tail on it so that we can add another value in the tail next time
     tail->next = new_node;
     tail = new_node;
 }
 
-//making function to print the linked list
 void print_linkedList(Node* head)
 {
     Node* tmp = head;
@@ -45,16 +39,24 @@ void print_linkedList(Node* head)
     }
 }
 
-  
+void size_of_list(Node* head)
+{
+    int count = 0;
+    Node* tmp = head;
+    while(tmp != NULL)
+    {
+        count++;
+        tmp = tmp->next;
+    }
+
+    cout << count << endl;
+}
 
 int main()
 {
-    //as we are adding or inserting node in the linked list initially the new linked list is blank so the head and tail both is pointed to NULL
     Node* head = NULL;
     Node* tail = NULL;
 
-    //we will take the input untill we get -1
-    
     while (1)
     {
         int x;
@@ -65,10 +67,10 @@ int main()
             break;
         }
 
-        insert_at_tail(head,tail,x);
+        insert_at_tail(head, tail, x);
     }
 
     print_linkedList(head);
-    
+    size_of_list(head);
     return 0;
 }
