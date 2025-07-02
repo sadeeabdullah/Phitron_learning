@@ -1,5 +1,4 @@
- tail before delete5
- tail after delete54
 1
 2
+5
 54
