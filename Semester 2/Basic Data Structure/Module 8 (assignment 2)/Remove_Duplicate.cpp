@@ -36,8 +36,8 @@ void remove_duplicates(Node *head)
 {
     for (Node *i = head; i != NULL; i = i->next)
     {
-        Node *j = i;
-        while (j->next != NULL)
+        
+        for (Node *j = i;j->next != NULL;)
         {
             if (i->val == j->next->val)
             {
