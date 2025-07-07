@@ -39,14 +39,13 @@ void print_backward(Node *tail)
     cout << endl;
 }
 
-//insert at head function
-void insert_at_head (Node *&head, int val)
+// insert at tail function
+void insert_at_tail (Node *&tail)
 {
-    //creating new node to add
-    Node *newNode = new Node(val);
-    newNode->next = head;
-    head->prev = newNode;
-    head = head->prev;
+    Node *newNode = new Node(500);
+    tail->next = newNode;
+    newNode->prev = tail;
+    tail = newNode;
 }
 int main()
 {
@@ -59,8 +58,7 @@ int main()
     a->next = tail;
     tail->prev = a;
 
-    insert_at_head(head, 100);
+    insert_at_tail(tail);
     print_forward(head);
-
     return 0;
 }
