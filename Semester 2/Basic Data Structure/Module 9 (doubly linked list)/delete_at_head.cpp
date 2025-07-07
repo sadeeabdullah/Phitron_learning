@@ -28,13 +28,18 @@ void print_forward(Node *head)
     cout << endl;
 }
 
-//delete at head
-void delete_at_head (Node *&head)
+//delete at head MAKE SURE YOU ALSO UPDATE TAIL WHEN THE LIST HAS ONLY ONE NODE
+void delete_at_head (Node *&head, Node *&tail)
 {
     Node *del = head;
     head = head->next;
-    head->prev = NULL;
     delete del;
+    if (head == NULL)
+    {
+        tail = NULL;
+        return;
+    }
+    head->prev = NULL;
 }
 int main()
 {
@@ -46,7 +51,8 @@ int main()
     a->prev = head;
     a->next = tail;
     tail->prev = a;
-    delete_at_head (head);
+    delete_at_head (head,tail);
+    delete_at_head (head,tail);
     print_forward(head);
     return 0;
 }
