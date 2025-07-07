@@ -54,7 +54,7 @@ void insert_at_tail(Node *&head, Node *&tail, int val)
 }
 
 // insert at any pos
-void insert_at_any_pos(Node *&head, Node *&tail, int idx, int val)
+void insert_at_any_pos(Node *&head, int idx, int val)
 {
     // creating new node to insert
     Node *tmp = head;
@@ -63,9 +63,9 @@ void insert_at_any_pos(Node *&head, Node *&tail, int idx, int val)
     {
         tmp = tmp->next;
     }
-    newNode->next = tmp->next->next;
+    newNode->next = tmp->next;
+    tmp->next->prev = newNode;
     newNode->prev = tmp;
-    tmp->next->next->prev = newNode;
     tmp->next = newNode;
     
 }
@@ -83,7 +83,8 @@ int main()
     insert_at_tail(head, tail, 1200);
     insert_at_tail(head, tail, 1500);
 
-    insert_at_any_pos(head, tail, 2, 500);
+    insert_at_any_pos(head, 2, 500);
+    insert_at_any_pos(head, 1, 100);
     print_forward(head);
     return 0;
 }
