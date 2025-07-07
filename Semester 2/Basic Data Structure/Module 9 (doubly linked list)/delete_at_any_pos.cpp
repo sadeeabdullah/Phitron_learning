@@ -29,17 +29,18 @@ void print_forward(Node *head)
 }
 
 //delete at head MAKE SURE YOU ALSO UPDATE TAIL WHEN THE LIST HAS ONLY ONE NODE
-void delete_at_head (Node *&head, Node *&tail)
+void delete_at_any_pos (Node *&head, int pos)
 {
-    Node *del = head;
-    head = head->next;
-    delete del;
-    if (head == NULL)
+    Node *tmp = head;
+    for (int i = 1; i < pos && tmp->next != NULL; i++)
     {
-        tail = NULL;
-        return;
+        tmp = tmp->next;
     }
-    head->prev = NULL;
+    Node *del = tmp->next;
+    tmp->next = tmp->next->next;
+    tmp->next->prev = tmp;
+    delete del;
+    
 }
 int main()
 {
@@ -52,8 +53,7 @@ int main()
     a->next = tail;
     tail->prev = a;
 
-    delete_at_head (head,tail);
-    delete_at_head (head,tail);
+    delete_at_any_pos (head,1);
     print_forward(head);
     
     return 0;
