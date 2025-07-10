@@ -36,6 +36,12 @@ int main()
     //we also can insert a whole list in the existing list using the insert function
     list <int> l3 = {12, 324,343, 5};
     l2.insert(next(l2.begin(),3),l3.begin(),l3.end());
+    
+    //we also can insert vector or array into that
+    vector<int> a = {14,345};
+    l2.insert(next(l2.begin(),3),a.begin(),a.end());
+    int b[] = { 15 , 346};
+    l2.insert(next(l2.begin(),3),b,b + 2);
     for(int val : l2)
     {
         cout << val << " ";
