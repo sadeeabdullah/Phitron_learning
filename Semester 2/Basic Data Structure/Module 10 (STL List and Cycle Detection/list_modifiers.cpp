@@ -47,5 +47,26 @@ int main()
         cout << val << " ";
     }
     cout << endl;
+    
+    l2.erase(next(l2.begin(),9),next(l2.begin(),11));
+    for(int val : l2)
+    {
+        cout << val << " ";
+    }
+    cout << endl;
+    
+
+    //replace function is not under STL
+    replace(l2.begin(), l2.end(),15, 100);
+    for(int val : l2)
+    {
+        cout << val << " ";
+    }
+    cout << endl;
+
+
+    // finding function is not under STL
+    auto it = find(l2.begin(),l2.end(),100);
+    cout << ((it != l2.end()) ? "found" : "not found") << endl;
     return 0;
 }
