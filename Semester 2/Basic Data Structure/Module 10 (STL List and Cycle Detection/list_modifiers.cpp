@@ -27,5 +27,19 @@ int main()
         cout << val << " ";
     }
     cout << endl;
+    
+    cout << *next(l2.begin(),1) << endl; // without derefferencing it is an iterator it works like the index in list for addressing position
+    
+    //insert function
+    l2.insert(next(l2.begin(),2), 56);
+
+    //we also can insert a whole list in the existing list using the insert function
+    list <int> l3 = {12, 324,343, 5};
+    l2.insert(next(l2.begin(),3),l3.begin(),l3.end());
+    for(int val : l2)
+    {
+        cout << val << " ";
+    }
+    cout << endl;
     return 0;
 }
