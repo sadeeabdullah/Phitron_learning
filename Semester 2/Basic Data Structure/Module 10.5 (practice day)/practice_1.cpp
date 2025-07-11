@@ -15,6 +15,7 @@ public:
     }
 };
 
+
 void insert_at_tail(Node* &head, Node *&tail, int val)
 {
     Node *newNode = new Node(val);
@@ -28,6 +29,34 @@ void insert_at_tail(Node* &head, Node *&tail, int val)
     tail = newNode;
 }
 
+int get_size (Node *head)
+{
+    int sz = 0;
+    while (head != NULL)
+    {
+        sz++;
+        head = head->next;
+    }
+    return sz;
+}
+
+string  check_same(Node *head, Node *head_2)
+{
+    if (get_size(head) != get_size(head_2))
+    {
+        return "NO";
+    }
+    for (int i = 0; i < get_size(head); i++)
+    {
+        if (head->val != head_2->val)
+        {
+            return "NO";
+        }
+        head = head->next;
+        head_2 = head_2->next;
+    }
+    return "YES";
+}
 void print_ls(Node *head)
 {
     while( head != NULL)
@@ -53,7 +82,7 @@ int main()
         insert_at_tail(head_2, tail_2, val);
     }
 
-    print_ls(head);
-    print_ls(head_2);
+    string isSame = check_same(head, head_2);
+    cout << isSame << endl;
     return 0;
 }
