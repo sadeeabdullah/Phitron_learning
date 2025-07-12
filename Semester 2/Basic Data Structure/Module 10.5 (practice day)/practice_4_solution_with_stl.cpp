@@ -26,12 +26,12 @@ void print_forward(list<int> &l)
     cout << endl;
 }
 
-void print_backward(list<int> &l)
+void print_backward(list<int> l)
 {
-    // copying this list and reversing
-    list<int> x = l;
-    reverse(x.begin(), x.end());
-    for (int val : x)
+    // reversing the l list and making sure we are not using refference in it otherwise the main list will be reversed as well.
+
+    reverse(l.begin(), l.end());
+    for (int val : l)
     {
         cout << val << " ";
     }
