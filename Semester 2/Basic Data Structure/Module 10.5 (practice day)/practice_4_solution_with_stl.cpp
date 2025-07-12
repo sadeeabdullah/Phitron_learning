@@ -47,6 +47,7 @@ int main()
     {
         int idx, val;
         cin >> idx >> val;
+        int sz = l.size();
 
         if (idx < 0 || idx > sz)
         {
@@ -56,17 +57,14 @@ int main()
         else if (idx == sz)
         {
             l.push_back(val);
-            sz++;
         }
         else if (idx == 0)
         {
             l.push_front(val);
-            sz++;
         }
         else
         {
             l.insert(next(l.begin(), idx), val);
-            sz++;
         }
 
         print_forward(l);
