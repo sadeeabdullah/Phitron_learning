@@ -14,7 +14,7 @@ public:
         ListNode *slow = head;
         ListNode *fast = head;
         bool flag = false;
-        while(head != NULL && head->next != NULL)
+        while(fast != NULL && fast->next != NULL)
         {
             // first we need to skip and move the slow to one node and fast to double node
             //then check if slow and fast is equal then it has a cycle
