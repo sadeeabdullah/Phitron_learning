@@ -21,7 +21,7 @@ class myStack
 public:
     Node *head = NULL;
     Node *tail = NULL;
-
+    int sz = 0;
     void push(int val)
     {
         // creating node to insert
@@ -31,24 +31,42 @@ public:
         {
             head = newNode;
             tail = newNode;
+            sz++;
             return;
         }
         tail->next = newNode;
         newNode->prev = tail;
         tail = newNode;
+        sz++;
     }
 
     void pop()
     {
+        sz--;
         Node *del = tail;
         tail = tail->prev;
-        tail->next = NULL;
         delete del;
+        if (tail == NULL)
+        {
+            head = NULL;
+            return;
+        }
+        tail->next = NULL;
     }
 
     int top()
     {
         return tail->val;
+    }
+    
+    int size()
+    {
+        return sz;
+    }
+
+    bool empty()
+    {
+        return tail == NULL;
     }
 };
 
@@ -70,5 +88,7 @@ int main()
     cout << st.top() << endl;
     st.pop();
     cout << st.top() << endl;
+    cout << st.size() << endl;
+    cout << (!(st.empty()) ? "Not empty" : "Empty") << endl;
     return 0;
 }
