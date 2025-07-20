@@ -5,45 +5,70 @@ class Node
 {
 public:
     int val;
-    Node* next;
+    Node *next;
     Node *prev;
 
     Node(int val)
     {
         this->val = val;
-        this->next = NULL; 
-        this->prev = NULL; 
+        this->next = NULL;
+        this->prev = NULL;
     }
 };
 
-class myStack 
+class myStack
 {
-    public:
+public:
     Node *head = NULL;
     Node *tail = NULL;
 
-    void insert_at_tail(head, tail, )
-
-}
-
-void insert_at_tail(Node *&head, Node *&tail, int val)
-{
-    //creating node to insert
-    Node *newNode = new Node(val);
-
-    if(head == NULL)
+    void push(int val)
     {
-        head = newNode;
-        tail = newNode;
-        return;
-    }
-    tail->next = newNode;
-    newNode->prev = tail;
-    tail = newNode;
+        // creating node to insert
+        Node *newNode = new Node(val);
 
-}
+        if (head == NULL)
+        {
+            head = newNode;
+            tail = newNode;
+            return;
+        }
+        tail->next = newNode;
+        newNode->prev = tail;
+        tail = newNode;
+    }
+
+    void pop()
+    {
+        Node *del = tail;
+        tail = tail->prev;
+        tail->next = NULL;
+        delete del;
+    }
+
+    int top()
+    {
+        return tail->val;
+    }
+};
+
 int main()
 {
-    
+    // we are taking static object because myStack is already dynamic because we are using vector  to make it. so normaly we will not use arrow or dereffernce to access its elements
+    myStack st;
+
+    // take input of stack from user
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        st.push(x);
+    }
+
+    cout << st.top() << endl;
+    st.pop();
+    cout << st.top() << endl;
     return 0;
 }
