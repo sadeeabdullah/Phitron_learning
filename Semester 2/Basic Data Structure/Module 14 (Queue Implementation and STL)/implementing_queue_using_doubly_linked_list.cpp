@@ -7,11 +7,13 @@ class Node
 public:
     int val;
     Node *next;
+    Node *prev;
 
     Node(int val)
     {
         this->val = val;
         this->next = NULL;
+        this->prev = NULL;
     }
 };
 
@@ -35,6 +37,7 @@ public:
             return;
         }
         tail->next = newNode;
+        newNode->prev = tail;
         tail = newNode;
     }
 
@@ -46,7 +49,9 @@ public:
         if (head == NULL)
         {
             tail = NULL;
+            return;
         }
+        head->prev = NULL;
         sz--;
     }
 
