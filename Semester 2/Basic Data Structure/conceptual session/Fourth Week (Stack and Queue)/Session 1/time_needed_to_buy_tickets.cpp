@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/time-needed-to-buy-tickets/description/
 class Solution {
 public:
     int timeRequiredToBuy(vector<int>& tickets, int k) {
