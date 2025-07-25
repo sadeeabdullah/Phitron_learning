@@ -1,16 +1,12 @@
-//https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/
+//https://leetcode.com/problems/make-the-string-great/
 
 class Solution {
 public:
-    string removeDuplicates(string s) {
-        stack<char> st;
+    string makeGood(string s) {
+         stack<char> st;
         for (char c : s)
         {
-            if(st.empty())
-            {
-                st.push(c);
-            }
-            else if (st.top() == c)
+            if (!st.empty() && abs(st.top() - c) == 32)
             {
                 st.pop();
             }
