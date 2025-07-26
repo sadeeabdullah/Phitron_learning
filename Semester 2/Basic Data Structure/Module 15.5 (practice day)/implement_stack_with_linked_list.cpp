@@ -1,3 +1,6 @@
+//https://www.codingninjas.com/studio/problems/implement-stack-with-linked-list_630475
+
+
 /****************************************************************
 
     Following is the class structure of the Node class:
@@ -49,6 +52,7 @@ public:
     }
 
     void push(int data)
+
     {
         //creating new node to insert it in the linked list
         Node *newNode = new Node(data);
