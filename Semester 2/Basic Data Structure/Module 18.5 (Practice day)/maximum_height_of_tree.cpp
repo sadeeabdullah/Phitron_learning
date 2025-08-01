@@ -90,13 +90,26 @@ void levelOrderPrinting(Node *root)
     }
     
 }
+
+int maxHeight(Node *root)
+{
+    if (root == NULL)
+        return 0;
+    if (root->left == NULL && root->right == NULL)
+        return 0; // because leaf node height is zero
+
+    int l = maxHeight(root->left);
+    int r = maxHeight(root->right);
+
+    return max(l, r) + 1;
+}
 int main()
 {
     // taking input
     Node * root= leveOrderInput();
 
     // showing output
-    levelOrderPrinting(root);
-
+    // levelOrderPrinting(root);
+    cout << maxHeight(root) << endl;
     return 0;
 }
