@@ -94,14 +94,14 @@ void insert(Node *&root, int val)
         root = new Node(val);
     if (root->val > val)
     {
-        if (root ->left == NULL)
-        root->left = new Node(val);
-    else
-        insert(root->left, val);
+        if (root->left == NULL)
+            root->left = new Node(val);
+        else
+            insert(root->left, val);
     }
     else
     {
-        if(root->right == NULL)
+        if (root->right == NULL)
             root->right = new Node(val);
         else
             insert(root->right, val);
@@ -114,6 +114,7 @@ int main()
     int val;
     cin >> val;
     insert(root, val);
+    insert(root, 100);
     levelOrder(root);
     return 0;
 }
