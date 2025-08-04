@@ -36,6 +36,21 @@ void levelOrder(Node *root)
             q.push(p->right);
     }
 }
+
+Node *convert(int a[], int n, int l, int r)
+{
+    if (l > r)
+        return NULL;
+    
+    int mid = (l + r) / 2;
+
+    Node *root = new Node(a[mid]);
+    Node *leftRoot = convert(a,n, l, mid - 1);
+    Node *rightRoot = convert(a,n, mid + 1, r);
+
+    root->left = leftRoot;
+    root->right = rightRoot;
+}
 int main()
 {
     int n;
@@ -43,5 +58,7 @@ int main()
     int a[n];
     for (int i = 0; i < n; i++)
         cin >> a[i];
+    Node * root = convert(a, n, 0, n - 1);
+    levelOrder(root);
     return 0;
 }
