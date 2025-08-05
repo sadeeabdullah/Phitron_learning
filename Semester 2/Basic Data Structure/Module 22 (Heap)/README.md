@@ -4,6 +4,11 @@ Heap is a special type of binary tree that is **complete** and commonly implemen
 
 Heap has two main types: **Max Heap** and **Min Heap**.
 
+**Parent idx** --> parent_idx = (child_idx - 1) / 2
+
+**child idx** | --> leftchild_idx = (parent_idx * 2) + 1;
+              | --> rightchild_idx = (parent_idx * 2) + 2;
+
 ---
 
 ## Max Heap
