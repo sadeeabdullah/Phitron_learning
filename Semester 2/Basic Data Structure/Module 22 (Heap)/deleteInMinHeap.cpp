@@ -11,7 +11,7 @@ void insertInMaxHeap(vector<int> &a, int val)
     while (true)
     {
         int parentIdx = (currIdx - 1) / 2;
-        if (a[currIdx] > a[parentIdx])
+        if (a[currIdx] < a[parentIdx])
             swap(a[currIdx], a[parentIdx]);
         else
             break;
@@ -44,7 +44,7 @@ void deleteHeap(vector<int> &a)
         int leftIdx = curr_idx * 2 + 1;
         int rightIdx = curr_idx * 2 + 2;
 
-        int leftVal = INT_MIN, rightVal = INT_MIN;
+        int leftVal = INT_MAX, rightVal = INT_MAX;
 
         if (leftIdx < a.size())
             leftVal = a[leftIdx];
@@ -53,12 +53,12 @@ void deleteHeap(vector<int> &a)
             rightVal = a[rightIdx];
 
         // compare and swap
-        if (leftVal >= rightVal && leftVal > a[curr_idx])
+        if (leftVal <= rightVal && leftVal < a[curr_idx])
         {
             swap(a[curr_idx], a[leftIdx]);
             curr_idx = leftIdx;
         }
-        else if (leftVal < rightVal && rightVal > a[curr_idx])
+        else if (leftVal > rightVal && rightVal < a[curr_idx])
         {
             swap(a[curr_idx], a[rightIdx]);
             curr_idx = leftIdx;
