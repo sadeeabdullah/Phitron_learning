@@ -1,6 +1,6 @@
 //https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
 
-// brute force solution:
+// brute force solution: time complexity O(N^2)
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
@@ -17,6 +17,21 @@ public:
 
             }
         }
+        return maxResult;
+    }
+};
+
+
+// little more optimize solution; time complexity O(NlogN)
+class Solution {
+public:
+    int maxProduct(vector<int>& nums) {
+        // using brute force to solve the problem
+        sort(nums.begin(),nums.end(), greater<int> ());
+        int mx1 = nums[0];
+        int mx2 = nums[1];
+        long long maxResult = (mx1 - 1) * (mx2 - 1);
+
         return maxResult;
     }
 };
