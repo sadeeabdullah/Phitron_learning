@@ -19,7 +19,7 @@ int main()
     for (auto it = s.begin(); it != s.end(); it++)
         cout << *it << endl;
 
-    // you can reversely or decendantly sort
+    // you can't reversely or decendantly sort
     // what you can do is input the set in vector then reverse
 
 
