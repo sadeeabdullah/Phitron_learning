@@ -1,3 +1,8 @@
-Rakib 12 86
-Hanif 1 64
-Sakib 14 64
+famim = 267
+ramim = 5
+shamim = 20
+tamim = 2
+267
+0
+0
+naire vai nai
