@@ -1,8 +1,10 @@
-famim = 267
-ramim = 5
-shamim = 20
-tamim = 2
-267
-0
-0
-naire vai nai
+1
+2
+4
+5
+34
+54
+64
+68
+76
+nai
