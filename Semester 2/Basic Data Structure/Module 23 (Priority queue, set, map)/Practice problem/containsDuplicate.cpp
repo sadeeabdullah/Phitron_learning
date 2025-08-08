@@ -29,3 +29,19 @@ public:
         return check;
     }
 };
+
+
+/// there is also a great approach with the use of set we will remove the duplicate value and check if the main vector size and update set size is equal or not if equal then true else false
+
+
+ class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        // brute force solution
+        set<int> s;
+        for (int x : nums)
+            s.insert(x);
+
+        return s.size() != nums.size();
+    }
+};
