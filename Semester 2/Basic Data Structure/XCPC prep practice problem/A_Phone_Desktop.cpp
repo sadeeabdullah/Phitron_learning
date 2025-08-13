@@ -28,7 +28,7 @@ int main()
             {
                 // we need another screen
                 screen++;
-            }
+            } // sample comment
         }
 
         cout << screen << endl;
