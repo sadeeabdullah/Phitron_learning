@@ -68,12 +68,43 @@ Node *inputTree()
     return root;
 }
 
-
+map<int, int> mp;
+// get the leaf nodes
+void leafNodes(Node *root)
+{
+    if(root == NULL)
+        return;
+    if (root->left == NULL && root->right == NULL)
+    {
+        mp[root->val]++;
+        return;
+    }
+    leafNodes(root->left);
+    leafNodes(root->right);
+}
 
 int main()
 {
     // for input the tree
     Node *root = inputTree();
-    levelOrder(root);
+    leafNodes(root);
+
+    int maxCount  = 0;
+    int maxVal = INT_MAX;
+    for(auto it : mp)
+    {
+        int val = it.first;
+        int count = it.second;
+        if (count > maxCount)
+        {
+            maxCount = count;
+            maxVal = val;
+        }
+        else if(count == maxCount)
+        {
+            maxVal = min(maxVal, val);
+        }
+    }
+    cout << maxVal << endl;
     return 0;
 }
