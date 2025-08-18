@@ -3,13 +3,14 @@ using namespace std;
 vector<int> adj_list[1005];
 bool vis[1005];
 
-void bfs(int src)
+void bfs(int src) // O(V) here we call the node  vertex so we 
+// total complexity O(V + E)
 {
     queue<int> q;
     q.push(src);
     vis[src] = true;
 
-    while (!q.empty())
+    while (!q.empty()) //O(E) here E is edge number
     {
         int par = q.front();
         q.pop();
