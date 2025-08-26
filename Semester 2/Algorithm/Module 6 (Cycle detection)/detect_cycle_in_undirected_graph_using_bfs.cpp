@@ -14,7 +14,7 @@ vector<int> adj_list[1005];
 vector<bool> vis(1005, false);
 
 vector<int> parent (1005, -1);
-bool flag;
+bool flag = false;
 void bfs(int src)
 {
     queue<int> q;
@@ -52,7 +52,7 @@ int main()
         adj_list[b].push_back(a);
     }
 
-    flag = false;
+    // flag = false;
     // here we don't have a simple source so we have to traverse through the visited track and find not visited node and use bfs on it
     for (int i = 0; i < n; i++)
         if (!vis[i])
