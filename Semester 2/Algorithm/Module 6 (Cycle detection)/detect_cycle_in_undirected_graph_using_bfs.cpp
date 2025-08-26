@@ -1,44 +1,50 @@
+// what is cycle in undirected graph?
+// cycle is a circumstances that happen when we go on a same path again and again. But in undirected graph at least 3 nodes or vertices is mandatory to make a cycle. we all know that two nodes also vary the characteristics of cycle but we cannot call it a cycle so we have to make a condition that helps to identify us that two nodes connected in both direction is not cylce. 
+
+// when two nodes is connected once the first is the parent node and the left one is child node. meanwhile the second node is parent node and the first node is also child node.
+
+// But when we have 3 node and have cycle in the graph we have a distinct condition that 2 nodes doesnot have and that is the third node parent node is not equal to its child node. that is the condition we are going to use
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
-int n, e;
-bool vis[1004];
-vector<int> adj_list[10000];
+// making adjacent list
+vector<int> adj_list[1005];
+vector<bool> vis(1005, false);
 
-// tracking array
-vector<int> parent(1005,-1);
-
-// cycle detection
-bool cycle;
+vector<int> parent (1005, -1);
+bool flag;
 void bfs(int src)
 {
     queue<int> q;
     q.push(src);
-    vis[src] = true;
+    vis[src] = true; // making src visited
 
     while(!q.empty())
     {
         int par = q.front();
         q.pop();
-        for (int x : adj_list[par])
+
+        for (int child : adj_list[par])
         {
-            if(vis[x] && parent[par] != x)
-                cycle = true;
-            if (!vis[x])
+            if (vis[child] && parent[par] != child)
+                flag = true;
+            if (!vis[child])
             {
-                q.push(x);
-                vis[x] = true;
-                parent[x] = par;
+                q.push(child);
+                vis[child] = true;
+                parent[child] = par;
             }
         }
-
     }
 }
 int main()
 {
+    int n, e;
     cin >> n >> e;
 
-    while(e--)
+    while (e--)
     {
         int a, b;
         cin >> a >> b;
@@ -46,15 +52,13 @@ int main()
         adj_list[b].push_back(a);
     }
 
-    memset(vis, false, sizeof(vis));
-
-    cycle = false;
+    flag = false;
+    // here we don't have a simple source so we have to traverse through the visited track and find not visited node and use bfs on it
     for (int i = 0; i < n; i++)
-    {
-        if(!vis[i])
+        if (!vis[i])
             bfs(i);
-    }
-    
-    cout << ((cycle) ? "cycle detected" : "No cycle") << endl;
+
+
+    cout << ((flag) ? "cycle detected" : "no cycle") << endl;
     return 0;
 }
