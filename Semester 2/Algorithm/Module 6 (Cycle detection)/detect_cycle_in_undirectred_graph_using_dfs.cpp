@@ -25,7 +25,7 @@ void dfs(int src)
             flag = true;
         if (!vis[child])
         {
-            parent[child] = src;
+            parent[child] = src; //  make sure you update the parent before recursive call
             dfs(child);
         }
     }
