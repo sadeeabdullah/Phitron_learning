@@ -48,10 +48,10 @@ int main()
     cin >> a >> b;
 
     // we are getting a index in matrix in character we have to convert it to real index
-    int si = a[0] - 'a';
-    int sj = a[1] - '1';
-    int di = b[0] - 'a';
-    int dj = b[1] - '1';
+    int sj = a[0] - 'a';
+    int si = a[1] - '1';
+    int dj = b[0] - 'a';
+    int di = b[1] - '1';
 
     memset(vis, false, sizeof(vis));
     memset(level, -1, sizeof(level));
