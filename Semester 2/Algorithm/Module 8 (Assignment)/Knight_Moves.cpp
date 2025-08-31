@@ -26,18 +26,26 @@ void bfs(int si, int sj)
 
     while (!q.empty())
     {
-        auto [ui, uj] = q.front();
+        // auto [ui, uj] = q.front();
+        // sorry this was out of our module i learned it outside
+
+        auto par = q.front();
+        
+        // splitting
+        int par_i = par.first;
+        int par_j = par.second;
+
         q.pop();
 
         for (auto d : dir)
         {
-            int ci = ui + d.first;
-            int cj = uj + d.second;
+            int ci = par_i + d.first;
+            int cj = par_j + d.second;
 
             if (valid(ci, cj) && !vis[ci][cj])
             {
                 vis[ci][cj] = true;
-                level[ci][cj] = level[ui][uj] + 1;
+                level[ci][cj] = level[par_i][par_j] + 1;
                 q.push({ci, cj});
             }
         }
