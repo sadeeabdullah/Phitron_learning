@@ -1,67 +1,53 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Edge {
-public:
-    int a, b, c;
-    Edge(int a, int b, int c) {
-        this->a = a;
-        this->b = b;
-        this->c = c;
-    }
-};
+int main()
+{
 
-int n, m, q;
-vector<Edge> edge_list;
-const long long INF = 1e18;
+    int n, e, q;
+    // taking adjacency matrix
+    cin >> n >> e >> q;
+    long long int adj_mat[n + 5][n + 5];
 
-// we will store distances for all sources
-vector<vector<long long>> all_dis;
-
-void bellman_ford(int src) {
-    vector<long long> dis(n + 1, INF);
-    dis[src] = 0;
-
-    for (int i = 0; i < n - 1; i++) {
-        for (auto &ed : edge_list) {
-            int a = ed.a, b = ed.b, c = ed.c;
-            if (dis[a] != INF && dis[a] + c < dis[b]) {
-                dis[b] = dis[a] + c;
-            }
-            if (dis[b] != INF && dis[b] + c < dis[a]) {
-                dis[a] = dis[b] + c; // because undirected
-            }
+    for (int i = 0; i <= n; i++)
+        for (int j = 0; j <=n; j++)
+        {
+            if (i == j)
+                adj_mat[i][j] = 0;
+            else
+                adj_mat[i][j] = LLONG_MAX;
         }
-    }
-
-    all_dis[src] = dis;
-}
-
-int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
-    cin >> n >> m >> q;
-    for (int i = 0; i < m; i++) {
-        int a, b, c;
+    while (e--)
+    {
+        long long int a, b, c;
         cin >> a >> b >> c;
-        edge_list.push_back(Edge(a, b, c));
+        adj_mat[a][b] = min(adj_mat[a][b], c);
+        adj_mat[b][a] = min(adj_mat[b][a], c);
     }
 
-    all_dis.assign(n + 1, vector<long long>(n + 1, INF));
+    // floyd warshall here
 
-    // run Bellman-Ford for each source
-    for (int i = 1; i <= n; i++) {
-        bellman_ford(i);
-    }
+    for (int k = 1; k <= n; k++)
+        for (int i = 1; i <= n; i++)
+            for (int j = 1; j <= n; j++)
+            {
+                if (adj_mat[i][k] != LLONG_MAX && adj_mat[k][j] != LLONG_MAX && adj_mat[i][k] + adj_mat[k][j] < adj_mat[i][j])
+                    adj_mat[i][j] = adj_mat[i][k] + adj_mat[k][j];
+            }
 
-    // answer queries
-    while (q--) {
-        int a, b;
-        cin >> a >> b;
-        if (all_dis[a][b] >= INF) cout << -1 << "\n";
-        else cout << all_dis[a][b] << "\n";
-    }
 
-    return 0;
+
+
+
+        while (q--)
+        {
+            int u, v;
+            cin >> u >> v;
+            if (adj_mat[u][v] == LLONG_MAX)
+                cout << -1 << endl;
+            else
+                cout << adj_mat[u][v] << endl;
+        }
+
+                return 0;
 }
