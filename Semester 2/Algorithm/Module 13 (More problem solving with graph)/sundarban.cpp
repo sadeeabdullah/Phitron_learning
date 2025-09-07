@@ -23,7 +23,7 @@ void bfs(int si, int sj)
     vis[si][sj] = true;
     dis[si][sj] = 0;
 
-    while(!q.empty())
+    while (!q.empty())
     {
         auto par = q.front();
         q.pop();
@@ -47,28 +47,30 @@ void bfs(int si, int sj)
 
 int main()
 {
-    memset(vis, false, sizeof(vis));
-    memset(dis, -1, sizeof(dis));
-    cin >> n;
+    while (cin >> n)
+    {
+        memset(vis, false, sizeof(vis));
+        memset(dis, -1, sizeof(dis));
 
-    int si, sj, di, dj;
-    for (int i = 0; i < n; i++)
-        for (int j = 0; j < n; j++)
-        {
-            cin >> grid[i][j];
-            if (grid[i][j] == 'S')
+        int si, sj, di, dj;
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
             {
-                si = i;
-                sj = j;
+                cin >> grid[i][j];
+                if (grid[i][j] == 'S')
+                {
+                    si = i;
+                    sj = j;
+                }
+                else if (grid[i][j] == 'E')
+                {
+                    di = i;
+                    dj = j;
+                }
             }
-            else if (grid[i][j] == 'E')
-            {
-                di = i;
-                dj = j;
-            }
-        }
-    
-    bfs(si, sj);
-    cout << dis[di][dj] << endl;
+
+        bfs(si, sj);
+        cout << dis[di][dj] << endl;
+    }
     return 0;
 }
