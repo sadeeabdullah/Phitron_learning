@@ -36,9 +36,14 @@ int main()
             }
             else
             {
+                int val = pq.top();
+                cout << val << '\n';
 
-                cout << pq.top() << '\n';
-                pq.pop();
+                // erase the next value if same
+                while (!pq.empty() && pq.top() == val)
+                {
+                    pq.pop();
+                }
             }
         }
     }
