@@ -5,9 +5,6 @@
     ios::sync_with_stdio(false); \
     cin.tie(NULL);
 using namespace std;
-
-
-//
 int main()
 {
     fastIO();
@@ -21,28 +18,23 @@ int main()
         string s;
         cin >> s;
 
-        // // we will be using a frequency array to store the repitation and if any letter is repeated more than once we will not coount it
+        // we will be using stack;
 
-        // vector<int> freq(26, 0);
+        stack<char> str;
+        for(char c : s)
+        {
+            if(!str.empty() &&str.top() == c)
+            {
+                str.pop();
+            }
+            else
+            {
+                str.push(c);
+            }
+        }
+        cout << str.size() << nl;
 
-        // // traversing through the string
-        // for (char c : s)
-        // {
-        //     freq[c - 'a']++;
-        // }
-
-        // // now traversing through the frequency array and counting how many singe letter we have
-        // int cnt = 0;
-        // for (int val : freq)
-        // {
-        //     if (val == 1)
-        //         cnt++;
-        // }
-
-        // cout << cnt << nl;
-
-
-        // we will use linked list
+        
     }
     return 0;
 }
