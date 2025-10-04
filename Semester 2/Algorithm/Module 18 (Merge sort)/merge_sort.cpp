@@ -21,7 +21,7 @@ void conquer (int arr[], int l, int mid, int r)
     //for the second array
     int m = r - mid;
     int r_arr[m];
-    k = mid + 1;
+    k = mid + 1;//// cmt
     for(int i = 0; i < m; i++, k++)
     {
         r_arr[i] = arr[k];
