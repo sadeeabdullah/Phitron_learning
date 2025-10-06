@@ -1,3 +1,6 @@
+//problem link : https://codeforces.com/problemset/problem/2074/A
+
+
 #include <bits/stdc++.h>
 #define ll long long int
 #define nl '\n'
@@ -18,3 +21,6 @@ int main ()
     }
     return 0;
 }
+
+
+
