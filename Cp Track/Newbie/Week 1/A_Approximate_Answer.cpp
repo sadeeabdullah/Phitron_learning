@@ -1,3 +1,5 @@
+// problem link: https://www.codechef.com/problems/P1149?tab=statement
+
 #include <bits/stdc++.h>
 #define ll long long int
 #define nl '\n'
