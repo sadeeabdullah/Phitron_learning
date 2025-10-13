@@ -1,0 +1,7 @@
+rahim 12
+karim 3
+karim 3
+habib
+rahim -> 0
+ -> 0
+rahim 5 0133
