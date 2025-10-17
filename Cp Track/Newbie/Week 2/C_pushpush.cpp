@@ -17,11 +17,13 @@ int main ()
     for(int i = 0; i < n; i++)
         cin >> a_arr[i];
 
-    vector<int> b_arr;
-    for(int i = 0; i < n; i++)
+    deque<int> b_arr;
+    for (int i = 0; i < n; i++)
     {
-        b_arr.push_back(a_arr[i]);
-        reverse(b_arr.begin(), b_arr.end());
+        if (i % 2 == 0)
+            b_arr.push_front(a_arr[i]);
+        else
+            b_arr.push_back(a_arr[i]);
     }
 
     for(int val : b_arr)
