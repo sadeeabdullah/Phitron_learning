@@ -1,0 +1,1 @@
+{"name":"Local: A_Indian_Summer","url":"d:\\Phitron\\Cp Track\\Newbie\\Week 2\\A_Indian_Summer.cpp","tests":[{"id":1760604839738,"input":"5\nbirch yellow\nmaple red\nbirch yellow\nmaple yellow\nmaple green\n","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Phitron\\Cp Track\\Newbie\\Week 2\\A_Indian_Summer.cpp","group":"local","local":true}

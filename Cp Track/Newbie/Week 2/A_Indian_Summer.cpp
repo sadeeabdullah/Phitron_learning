@@ -13,20 +13,15 @@ int main ()
  
     int n;
     cin >> n;
-    map<string, set<string>> trees_leaves;
+    map<pair<string, string>, bool> trees_leaves;
 
     for(int i = 0; i < n; i++)
     {
         string tree, leaf_color;
         cin >> tree >> leaf_color;
-        trees_leaves[tree].insert(leaf_color);
+        trees_leaves[{tree, leaf_color}] = true;
     }
 
-    int count = 0;
-    for(auto p : trees_leaves)
-    {
-        count += p.second.size();
-    }
-    cout << count << nl;
+    cout << trees_leaves.size() << nl;
     return 0;
 }
