@@ -26,7 +26,7 @@ int main ()
     {
         int a, b;
         cin >> a >> b;
-        cout << mp[{a,b}] << nl;
+        cout << mp[{a,b}] << nl;//
     }
     return 0;
 }
