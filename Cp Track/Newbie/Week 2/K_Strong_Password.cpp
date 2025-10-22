@@ -18,42 +18,32 @@ int main()
     {
         string s;
         cin >> s;
-
-        if (s.size() == 1)
+ 
+        int n = s.size();
+        bool flag = true;
+        for (int i = 0; i < n - 1; i++)
         {
-            if (s[0] != 'z')
-                s.push_back(char(s[0] + 1));
-            else
-                s.push_back('a');
-            cout << s << nl;
-        }
-        else if (s.size() == 2 && s[0] == s[1])
-        {
-            if (s[0] != 'z')
-                s.insert(s.begin() + 1, char(s[0] + 1));
-            else
-                s.insert(s.begin() + 1, 'a');
-
-            cout << s << nl;
-        }
-        else if (s.size() == 2 && s[0] != s[1])
-        {
-            cout << s << nl;
-        }
-        else
-        {
-            for (int i = 0; i < s.size(); i++)
+            cout << s[i];
+            if (s[i + 1] == s[i] && flag == true)
             {
-                if (i != s.size() - 1 && s[i] == s[i + 1])
-                {
-                    if (s[0] != 'z')
-                        s.insert(s.begin() + i + 1, char(s[0] + 1));
-                    else
-                        s.insert(s.begin() + i + 1, 'a');
-                }
+                flag = false;
+                if (s[i] == 'a')
+                    cout << 'b';
+                else
+                    cout << 'a';
             }
-            cout << s << nl;
         }
+        cout << s[n - 1];
+        if (flag == true)
+        {
+            if (s[n - 1] == 'a')
+                cout << 'b';
+            else
+                cout << 'a';
+        }
+        cout << endl;
     }
     return 0;
 }
+
+
