@@ -1,4 +1,4 @@
-// problem link : 
+// problem link : https://codeforces.com/problemset/problem/637/B
 #include <bits/stdc++.h>
 #define ll long long int
 #define nl '\n'
@@ -11,25 +11,26 @@ int main ()
     
     int n;
     cin >> n;
-    deque<string> chats;
+    map<string, vector<int>> mp;
+
+    vector<pair<int,string>> idx;
+
     for (int i = 0; i < n; i++)
     {
-        string name;
-        cin >> name;
-        for (auto it = chats.begin(); it != chats.end(); it++)
-        {
-            if (*it == name)
-            {
-                *it= "#";
-                break;
-            }
-        }
-        chats.push_front(name);
+        string  name;    cin >> name;
+        mp[name].push_back(i);
     }
-    for (auto name : chats)
+
+    for (auto [x,y] : mp)
     {
-        if (name != "#")
-        cout << name << nl;
+        idx.push_back({y.back(), x});
+    }
+
+    sort(idx.rbegin(), idx.rend());
+
+    for (auto  [x, y] : idx)
+    {
+        cout << y <<nl;
     }
     return 0;
 }
