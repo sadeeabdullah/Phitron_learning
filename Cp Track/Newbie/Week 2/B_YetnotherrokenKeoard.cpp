@@ -1,4 +1,5 @@
 // problem link: https://codeforces.com/problemset/problem/1907/B
+// solution link : https://www.youtube.com/watch?v=NEhDrjws6io
 
 #include <bits/stdc++.h>
 #define ll long long int
@@ -17,42 +18,38 @@ int main ()
         string s;
         cin >> s;
 
-        bool found_b = false;
-        bool found_B = false;
+        
+        stack<int> lowerCaseIdx, upperCaseIdx;
 
-        stack<int> lowercase_idx;
-        stack<int> uppercase_idx;
-        for (int i = 0; i < s.size(); i++)
+        int n = s.size();
+
+        for (int i = 0; i < n; i++)
         {
-            if(s[i] <= 'z' && s[i] >= 'a' && s[i] != 'b')
-            {
-                lowercase_idx.push(i);
-            }
-            else if(s[i] <= 'Z' && s[i] >= 'A' && s[i] != 'B')
-            {
-                uppercase_idx.push(i);
-            }
+            if (s[i] >= 'a' && s[i] <= 'z' && s[i] != 'b')
+                lowerCaseIdx.push(i);
+            else if (s[i] >= 'A' && s[i] <= 'Z' && s[i] != 'B')
+                upperCaseIdx.push(i);
 
-            if (s[i] == 'b')
+            // when we get the upper case B
+            if (s[i] == 'B')
             {
-                 if (!(lowercase_idx.empty()))
+                if (!upperCaseIdx.empty())
                 {
-                    s[lowercase_idx.top()] = '#';
-                    lowercase_idx.pop();
+                    s[upperCaseIdx.top()] = '#';
+                    upperCaseIdx.pop();
                 }
                 s[i] = '#';
             }
-            else if (s[i] == 'B')
+            else if (s[i] == 'b')
             {
-                if (!(uppercase_idx.empty()))
+               if (!lowerCaseIdx.empty())
                 {
-                    s[uppercase_idx.top()] = '#';
-                    uppercase_idx.pop();
-                }
+                    s[lowerCaseIdx.top()] = '#';
+                    lowerCaseIdx.pop();
+                } 
                 s[i] = '#';
             }
         }
-
         for(char c : s)
         {
             if (c != '#')
