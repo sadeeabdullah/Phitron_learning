@@ -1,5 +1,6 @@
 // problem link : https://codeforces.com/edu/course/2/lesson/9/1/practice/contest/307092/problem/C
 
+
 #include <bits/stdc++.h>
 #define ll long long int
 #define nl '\n'
@@ -15,23 +16,39 @@ int main ()
  
     int n, m;
     cin >> n >> m;
-    map<int, int> mp;
+    vector<int> a(n + 1), b(m + 1);
+
     loop(1, n, i)
     {
-        int x;
-        cin >> x;
-        mp[x]++;
+        cin >> a[i];
     }
-
-    ll cnt = 0;
-    while(m--)
+    loop(1, m, i)
     {
-        int y; 
-        cin >> y;
-        cnt += mp[y];
+        cin >> b[i];
     }
 
-    cout << cnt << nl;
+    ll ans = 0;
+    int i = 1, j = 1;
+    while(i <= n && j <= m)
+    {
+        int curr = a[i], cnt1 = 0, cnt2 = 0;
 
+        while(i <= n && a[i] == curr)
+        {
+            cnt1++, i++;
+        }
+        while (curr > b[j])
+        {
+            j++;
+        }
+        while (j <= m && curr == b[j])
+        {
+            cnt2++, j++;
+        }
+        
+        ans += (1LL * cnt1 *cnt2);
+    }
+
+    cout << ans << nl;
     return 0;
 }

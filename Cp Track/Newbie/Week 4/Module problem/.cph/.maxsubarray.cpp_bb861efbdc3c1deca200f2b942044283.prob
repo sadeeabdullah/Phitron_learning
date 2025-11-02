@@ -1,0 +1,1 @@
+{"name":"Local: maxsubarray","url":"d:\\Phitron\\Cp Track\\Newbie\\Week 4\\Module problem\\maxsubarray.cpp","tests":[{"id":1762091595314,"input":"4\n100 200 300 400\n2","output":"700"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Phitron\\Cp Track\\Newbie\\Week 4\\Module problem\\maxsubarray.cpp","group":"local","local":true}
