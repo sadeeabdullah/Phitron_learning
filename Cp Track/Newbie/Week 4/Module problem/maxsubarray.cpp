@@ -45,3 +45,32 @@ int main ()
     cout << ans << nl;
     return 0;
 }
+
+
+// class Solution {
+//   public:
+//     int maxSubarraySum(vector<int>& arr, int k) {
+//         // code here
+//        int n = arr.size();
+
+//     int ans = INT_MIN;
+//     int i = 0, r = 0;
+//     int sum = 0;
+//     while(r < n)
+//     {
+//         sum += arr[r];
+//         if (r - i + 1 == k)
+//         {
+//             ans = max(sum, ans);
+//             sum -= arr[i];
+//             i++, r++;;
+//         }
+//         else
+//         {
+//             r++;
+//         }
+
+//     }
+//     return ans;
+//     }
+// };
