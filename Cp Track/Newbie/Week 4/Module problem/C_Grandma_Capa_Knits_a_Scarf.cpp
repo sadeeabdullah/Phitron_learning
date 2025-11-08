@@ -1,4 +1,5 @@
 // problem link : https://codeforces.com/problemset/problem/1582/C
+// explaination : https://drive.google.com/file/d/1C4dDkb7kWi9tAXvSE25I-s69lrOrvWDb/view
 
 #include <bits/stdc++.h>
 #define ll long long int
