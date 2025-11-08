@@ -19,25 +19,25 @@ int main ()
     int n;
     cin>> n;
 
-    vector<int> d(n + 10,0);
-    for(int i = 0;i < n; i++)
+    map<int, int> mp;
+    for(int i = 1; i <= n; i++)
     {
-        int l , r;
+        int l, r;
         cin >> l >> r;
-        d[l] += 1;
-        d[r + 1] -= 1;
+        mp[l]++;
+        mp[r + 1]--;
     }
 
-    loop(1, n + 5, i)
-    {
-        d[i] = d[i] + d[i - 1];
-    }
+
+    // now if we want same like prefix sum we can do like below
+    ll sum = 0;
 
     bool flag = true;
-
-    for(int val : d)
+    for(auto [key, value] : mp)
     {
-        if(val > 2)
+        sum += value;
+        // cout << sum << " ";
+        if(sum > 2)
         {
             flag = false;
             break;
@@ -50,5 +50,6 @@ int main ()
     }
     else
         no;
+
     return 0;
 }
