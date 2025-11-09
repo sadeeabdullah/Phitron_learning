@@ -75,6 +75,59 @@
 // }
 
 
+// #include <bits/stdc++.h>
+// #define ll long long int
+// #define nl '\n'
+// #define fastIO() ios::sync_with_stdio(false); cin.tie(NULL);
+// #define yes cout << "YES"<< nl;
+// #define no cout << "NO" << nl;
+// #define loop(start, end,var) for (int var = (start); var <= (end); var++)
+// #define rsORT(var) sort(var.rbegin(), var.rend())
+// #define sORT(var) sort(var.begin(), var.end())
+// #define testCase{} int tc; cin >> tc; while(tc--)
+// using namespace std;
+
+// int main ()
+// {
+//     fastIO();
+ 
+//     int n, x;
+//     cin >> n>> x;
+//     vector<pair<int,int>> arr;
+
+//     loop (0, n -1, i)
+//     {
+//         int x;
+//         cin >> x;
+//         arr.push_back({x, i + 1});
+//     }
+
+//     sORT(arr);
+//     for(int i = 0, j = n - 1; i < j;)
+//     {
+//         if (arr[i].first + arr[j].first == x)
+//         {
+//             cout << arr[i].second << " " << arr[j].second << nl;
+//             return 0;
+//         }
+//         else if (arr[i].first + arr[j].first > x)
+//         {
+//             j--;
+//         }
+//         else
+//         {
+//             i++;
+//         }
+//     }
+
+//     cout << "IMPOSSIBLE" << nl;
+
+//     return 0;
+// }
+
+
+
+// adding revision code
 #include <bits/stdc++.h>
 #define ll long long int
 #define nl '\n'
@@ -91,36 +144,39 @@ int main ()
 {
     fastIO();
  
-    int n, x;
-    cin >> n>> x;
-    vector<pair<int,int>> arr;
-
-    loop (0, n -1, i)
+    int n,x;
+    cin>> n >> x;
+    vector<pair<int,int>> a;
+    loop(1, n, i)
     {
-        int x;
-        cin >> x;
-        arr.push_back({x, i + 1});
+        int x; cin >> x;
+
+        a.push_back({x, i});
     }
 
-    sORT(arr);
-    for(int i = 0, j = n - 1; i < j;)
+    sORT(a);
+
+    int left = 0, right = n - 1;
+    while(left < right)
     {
-        if (arr[i].first + arr[j].first == x)
+        int tmp_total = a[left].first + a[right].first;
+
+        if(tmp_total == x)
         {
-            cout << arr[i].second << " " << arr[j].second << nl;
+            cout << a[left].second << " " << a[right].second << nl;
             return 0;
         }
-        else if (arr[i].first + arr[j].first > x)
+
+        else if(tmp_total > x)
         {
-            j--;
+            right--;
         }
         else
         {
-            i++;
+            left++;
         }
     }
 
     cout << "IMPOSSIBLE" << nl;
-
     return 0;
 }
