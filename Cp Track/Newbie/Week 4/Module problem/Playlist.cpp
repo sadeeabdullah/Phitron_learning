@@ -112,7 +112,7 @@ int main ()
     int maxO = 0;
     // we will store the array with the index in a map
     map<int, int> lastSeen;
-    for(int i = 1, j = 1; i <= n; i++)
+    for(int i = 0, j = 0; i < n; i++)
     {
         int x;
         cin >> x;
