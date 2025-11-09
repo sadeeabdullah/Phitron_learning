@@ -49,6 +49,47 @@
 
 /// lets do it with another approach
 
+// #include <bits/stdc++.h>
+// #define ll long long int
+// #define nl '\n'
+// #define fastIO() ios::sync_with_stdio(false); cin.tie(NULL);
+// #define yes cout << "YES"<< nl;
+// #define no cout << "NO" << nl;
+// #define loop(start, end,var) for (int var = (start); var <= (end); var++)
+// #define rsORT(var) sort(var.rbegin(), var.rend())
+// #define sORT(var) sort(var.begin(), var.end())
+// #define testCase{} int tc; cin >> tc; while(tc--)
+// using namespace std;
+
+// int main ()
+// {
+//     fastIO();
+ 
+//     int n;
+//     cin >> n;
+
+//     int maxO = 0;
+//     // we will store the array with the index in a map
+//     map<int, int> lastSeen;
+//     int left = 1;
+//     loop(1,n, i)
+//     {
+//         int x;
+//         cin >> x;
+
+//         if(lastSeen.find(x) != lastSeen.end() && lastSeen[x] >= left)
+//         {
+//             left = lastSeen[x] + 1;
+//         }
+//         lastSeen[x]  = i;
+//         maxO = max(maxO, i - left + 1);
+//     }
+
+//     cout << maxO << nl;
+//     return 0;
+// }
+
+// lets make it more small and simple
 #include <bits/stdc++.h>
 #define ll long long int
 #define nl '\n'
@@ -71,18 +112,14 @@ int main ()
     int maxO = 0;
     // we will store the array with the index in a map
     map<int, int> lastSeen;
-    int left = 1;
-    loop(1,n, i)
+    for(int i = 1, j = 1; i <= n; i++)
     {
         int x;
         cin >> x;
 
-        if(lastSeen.find(x) != lastSeen.end() && lastSeen[x] >= left)
-        {
-            left = lastSeen[x] + 1;
-        }
+        j = max(j, lastSeen[x] + 1);
         lastSeen[x]  = i;
-        maxO = max(maxO, i - left + 1);
+        maxO = max(maxO, i - j + 1);
     }
 
     cout << maxO << nl;
