@@ -1,0 +1,12 @@
+PBDS = Policy Based Data Struture
+
+PBDS = SET  + MULTISET
+
+EXTRA FACILITIES(2 XTRA FUNCTIONALITIES):?
+1. order_of_key  ---> if you x it will say how many value is strictly less than x in PBDS --->O(log n)
+2. find_by_order  ---> it will return the value in any index(yeah we know that we only can iterate on the STL but find_by_order uses iterator but can give you the index value by increasing the iterator in just O(log n) time complexity) 
+
+
+all functionality of set and MULTISET is available in pbds but erase function for MULTISET is different
+HOW?
+use set as MULTISET
