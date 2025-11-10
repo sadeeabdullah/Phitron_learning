@@ -38,11 +38,11 @@ int main ()
     cin >> n >> k;
     pbds<pair<int,int>> pb;
 
-    vector<pair<int,int>> a;
+    vector<int> a;
     loop(0, n - 1, i)
     {
         tInt(x);
-        a.push_back({x,i});
+        a.push_back(x);
 
     }   
 
@@ -56,7 +56,7 @@ int main ()
     int l = 0, r = 0;
     while(r < n)
     {
-        pb.insert({a[r].first, r});
+        pb.insert({a[r], r});
         if(r - l + 1 == k)
         {
             if(!isEven(k))
@@ -70,7 +70,7 @@ int main ()
                 cout << val << " ";
             }
 
-            pb.erase({a[l].first, a[l].second});
+            pb.erase({a[l], l});
             l++;
         }
         r++;
