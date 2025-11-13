@@ -1,5 +1,4 @@
-//problel ink :https://cses.fi/problemset/task/1077
-
+// problem link : https://cses.fi/problemset/task/2162
 
 #include <bits/stdc++.h>
 
@@ -30,40 +29,29 @@ int main ()
 {
     fastIO();
  
-    tInt(n); tInt(k);
-    vector<int> a(n);
-    vector<int> ans(n - k + 1);
-
+    tInt(n);
+    pbds<int> pb;
     loop(0, n - 1, i)
     {
-        cin >> a[i];
+        pb.insert(i + 1);
     }
-
-    // we are taking a pbds for storing these vlaues
-    pbds<pair<int,int>> pb;
-
-    int l= 0, r = 0;
-    while(r < n)
+    
+    int pos = 0;
+    // while(n--) // here using n as size
+    // {
+    //     pos = (pos + 1) % (n + 1);
+    //     auto it = pb.find_by_order(pos);
+    //     cout << *it << " ";
+    //     pb.erase(it);
+    // }
+    int size = n;
+    while(size > 0) // here using n as size
     {
-        pb.insert({a[r], r});
-        if (r - l + 1 == k)
-        {
-            auto it = (pb.find_by_order(k / 2));
-            int ans = 0;
-            for(auto [val, idx] : pb)
-            {
-                ans += abs(val - it->first);
-            }
-
-            cout << ans << " ";
-            if(!pb.empty())
-            {
-                pb.erase({a[l],l});
-            }
-            l++;
-        }
-        r++;
+        pos = (pos + 1) % size;
+        auto it = pb.find_by_order(pos);
+        cout << *it << " ";
+        pb.erase(it);
+        size--;
     }
-
     return 0;
 }
