@@ -1,3 +1,6 @@
+// problem link ; https://codeforces.com/problemset/problem/762/A
+
+
 #include <bits/stdc++.h>
 
 #include<ext/pb_ds/assoc_container.hpp>
@@ -27,28 +30,27 @@ int main ()
 {
     fastIO();
  
-
-    vector<int> divisor;
-    tInt(n);
-    // loop(1, sqrt(n), i) // sqrtN
-    for(int i = 1; i * i <= n ; i++) // sqrtN
+    tLL(n);
+    tLL(k);
+    vector<ll> divisor;
+    for(ll i = 1; i * i <= n; i++)
     {
-        if (n % i == 0)
+        if(n % i == 0)
         {
-            // cout << i << " ";
             divisor.push_back(i);
-            if((n / i) != i)
+            if((n / i )!= i)
             {
-                // cout << (n / i) << " ";
                 divisor.push_back(n / i);
             }
         }
     }
 
     sORT(divisor);
-    for(auto val : divisor)
+    if(divisor.size() >= k)
     {
-        cout << val << " ";
+        cout << divisor[k - 1] << nl;
     }
+    else
+        cout << -1 << nl;
     return 0;
 }
