@@ -27,13 +27,27 @@ int main ()
 {
     fastIO();
  
+
+    vector<int> divisor;
     tInt(n);
-    loop(1, sqrt(n), i)
+    loop(1, sqrt(n), i) // sqrtN
     {
         if (n % i == 0)
         {
-            cout<< i << " " << (n / i) << " ";
+            // cout << i << " ";
+            divisor.push_back(i);
+            if((n / i) != i)
+            {
+                // cout << (n / i) << " ";
+                divisor.push_back(n / i);
+            }
         }
+    }
+
+    sORT(divisor);
+    for(auto val : divisor)
+    {
+        cout << val << " ";
     }
     return 0;
 }
