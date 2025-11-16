@@ -1,4 +1,5 @@
-// problem link :https://codeforces.com/problemset/problem/678/C
+//problem link : https://codeforces.com/problemset/problem/1051/B
+
 #include <bits/stdc++.h>
 
 #include<ext/pb_ds/assoc_container.hpp>
@@ -24,23 +25,22 @@ using namespace std;
 
 template <typename T> using pbds = tree <T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-
-ll LCM(ll a, ll b)
-{
-    return a / (__gcd(a, b)) * b;
-}
 int main ()
 {
     fastIO();
  
     tLL(n);
-    tLL(a);
-    tLL(b);
-    tLL(p);
-    tLL(q);
-
-    ll count1 = (n / a) * p, count2 = (n / b) * q, overload = (n / LCM(a, b)) * min(p, q);
-
-    cout << count1 + count2 - overload <<nl;
+    tLL(m);
+    yes;
+    ll cnt = (m - n + 1) / 2;
+    for(ll i = n; i<= m; i+= 2)
+    {
+        if(cnt == 0)
+        {
+            break;
+        }
+        cout << i << " " << i + 1 << nl;
+        cnt--;
+    }
     return 0;
 }
