@@ -1,4 +1,6 @@
-//problem link : https://www.codechef.com/problems/NUMHUNT
+// problem link : https://www.codechef.com/problems/DIVAB?tab=statement
+
+
 //Bismillah hir rahmanir rahim
 //keep Patience, Destiny is more beautiful
 
@@ -27,60 +29,26 @@ using namespace std;
 
 template <typename T> using pbds = tree <T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
-bool isPrime(ll n)
-{
-    if(n <= 1)
-    {
-        return true;
-    }
-    for(ll i = 2; i * i <= n ;i++)
-    {
-        if(n % i == 0)
-        {
-            return false;
-        }
-    }
-    return true;
-}
-
-
-bool perfectSquare (ll n)
-{
-    ll tmp = sqrt(n);
-    if(tmp * tmp == n)
-    {
-        return true;
-    }
-    return false;
-}
-
-// NEW FUNCTION: Check if all factors (except 1) are >= x
-bool validFactors(ll y, ll x) {
-    for(ll i = 2; i * i <= y; i++) {
-        if(y % i == 0) {
-            // i is a factor of y
-            if(i < x) return false;
-            // y/i is also a factor of y
-            if(y / i < x) return false;
-        }
-    }
-    return true;
-}
 
 void solve()
 {
-   tLL(n);
+    tLL(a);
+    tLL(b);
+    tLL(n);
+    if(a % b == 0)
+    {
+        cout << -1 << nl;
+        return;
+    }
+    ll ans = n - n % a;
 
-   ll i = n + 1;
-   while(true)
-   {
-        if(!perfectSquare(i) && !isPrime(i) && validFactors(i, n))
-        {
-            cout << i << nl;
-            break;
-        }
-        i++;
-   }
+    if (n % a != 0) ans += a;
+    
+    if(ans % b == 0)
+    {
+        ans += a;
+    }
+    cout << ans << nl;
 }
 int main ()
 {
