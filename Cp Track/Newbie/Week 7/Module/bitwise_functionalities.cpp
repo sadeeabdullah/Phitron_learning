@@ -70,6 +70,11 @@ int turn_off_kth_bit(int n, int k)
     return n &( ~(1 << k)); // first doing not operation inside the doing and operation OR you can use XOR operator
     // return n ^ (1 << k);
 }
+
+int toggle_kth_bit(int n, int k)
+{
+    return n ^ (1 << k);
+}
 void solve()
 {
     // check kth bit on or off?=
@@ -87,6 +92,10 @@ void solve()
    // turn off kth bit
    int y = turn_off_kth_bit(61,4);
    cout << y << nl;
+
+   // toggle kth bit
+   int z = toggle_kth_bit(45, 4);
+   cout << z << nl;
 }
 int main ()
 {
