@@ -1,0 +1,7 @@
+for boolean algebra
+
+
+AND :   if we have at least one zero then the answer is zero
+NOT :   basically it is used for one bit if there is one it makes zero if zero then makes it one
+OR :    at least one 1 makes the whole answer 1
+XOR :   odd number of 1 makes one else zero
