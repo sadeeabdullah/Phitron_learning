@@ -1,4 +1,4 @@
-// problem link : https://www.codechef.com/problems/XORSMALL
+// problem link ; https://www.codechef.com/problems/DUPLET?tab=submissions
 
 //Bismillah hir rahmanir rahim
 //keep Patience, Destiny is more beautiful
@@ -28,32 +28,12 @@ using namespace std;
 template <typename T> using pbds = tree <T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 
-// key observation:
-
-// 1. if we do XOR between two number it can be smaller or greater both
-// 2. if Most significant is on then obviously the XOR value would be smalller
-// 3. if the most significant bits are not on (at least one  bit on) then the XOR value would be greateer
-// 4. if we do XOR of  one numberm with another 0000… then it would be equal as the number.
-
-
-
 void solve()
 {
    int n;
    cin >> n;
-
-   vector<int> a(n);
-
-   int andO = INT_MAX;
-   for(int i = 0; i < n;  i++)
-   {
-    cin >> a[i];
-    andO = andO & a[i];
-   }
-
-   cout << andO <<nl;
+   cout << n << " " << n - 1 <<nl;
 }
-
 int main ()
 {
     fastIO();
