@@ -27,20 +27,38 @@ using namespace std;
 template <typename T> using pbds = tree <T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 
-void solve()
-{
-    int ans = 0;
-    int n;  cin >> n;
-    vector<bool> isAvailable(n + 1, false);
-    vector<int> a(n);
-    for(int i= 0; i < n ; i++)
-    {
-        int x;  cin >> x;
-        isAvailable[x] = true;
-        if(!isAvailable[x - 1]) ans++;
+// void solve()
+// {
+//     int ans = 0;
+//     int n;  cin >> n;
+//     vector<bool> isAvailable(n + 1, false);
+//     vector<int> a(n);
+//     for(int i= 0; i < n ; i++)
+//     {
+//         int x;  cin >> x;
+//         isAvailable[x] = true;
+//         if(!isAvailable[x - 1]) ans++;
 
-    }   
-    cout << ans << nl;
+//     }   
+//     cout << ans << nl;
+// }
+
+// another aprroach
+void solve(){
+    int round = 1;
+    int n;  cin >>n;    
+    map<int,int> mp;
+    for(int i = 1; i <= n; i++){
+        int x;  cin >>x;
+        mp[x] = i;
+    }
+
+    // if x -1 after the x pos then one rond will be added
+    for(int i=2; i <=n; i++)
+    {
+        if(mp[i] < mp[i - 1])   round++;
+    }
+    cout << round << nl;
 }
 int main ()
 {
