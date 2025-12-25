@@ -29,20 +29,28 @@ template <typename T> using pbds = tree <T, null_type, less<T>, rb_tree_tag, tre
 //brute force solution may get tle
 void solve()
 {
-   ll n, m, y = 1, x = 1;    cin >> n >>m;
+   ll n, m;    cin >> n >>m;
    vector<ll> a(n), b(n);   
    for(ll i =0; i < n; i++)    cin >> a[i];
    for(ll i =0; i < n; i++)    cin >> b[i];
 
    ll ans = 0;
-    for(ll i = 1; i <= m; i++){
-        ll y = i;
 
+        ll yCon = 1;
         for(ll j = 0;j < n; j++){
-            y = max ((y + b[j]), a[j]);
+            yCon = max ((yCon + b[j]), a[j]);
         }
-        ans += y;
-    }
+        ll yM = m;
+        for(ll j = 0; j < n; j++){
+            yM = max((yM + b[j]), a[j]);
+        }
+
+        ll increasingPart = yM - yCon;
+    ans += (m - increasingPart) * yCon;
+
+    // now for the increasing part sum
+
+    ans  += ((yM * (yM + 1)) / 2) - ((yCon * (yCon + 1)) / 2);
     cout << ans << nl;
 }
 int main ()
