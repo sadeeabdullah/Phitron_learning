@@ -1,52 +1,87 @@
 // problem link : https://www.codechef.com/problems/HEIGHTS
-//Bismillah hir rahmanir rahim
-//keep Patience, Destiny is more beautiful
-
+// Bismillah hir rahmanir rahim
+// keep Patience, Destiny is more beautiful
 
 #include <bits/stdc++.h>
 
-#include<ext/pb_ds/assoc_container.hpp>
-#include<ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 
 #define ll long long int
 #define llmax LLONG_MAX
 #define nl '\n'
-#define fastIO() ios::sync_with_stdio(false); cin.tie(NULL);
-#define yes cout << "YES"<< nl;
+#define fastIO()                 \
+    ios::sync_with_stdio(false); \
+    cin.tie(NULL);
+#define yes cout << "YES" << nl;
 #define no cout << "NO" << nl;
-#define loop(start, end,var) for (int var = (start); var <= (end); var++)
+#define loop(start, end, var) for (int var = (start); var <= (end); var++)
 #define rsORT(var) sort(var.rbegin(), var.rend())
 #define sORT(var) sort(var.begin(), var.end())
-#define tStr(var) string var; cin >> var;
-#define testCase int t; cin >> t; while(t--)
+#define tStr(var) \
+    string var;   \
+    cin >> var;
+#define testCase \
+    int t;       \
+    cin >> t;    \
+    while (t--)
 
 using namespace __gnu_pbds;
 
 using namespace std;
 
-template <typename T> using pbds = tree <T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-
+template <typename T>
+using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 void solve()
 {
-   ll n;    cin >> n;
-   map<ll,ll> mp;
-   while(n--){
-    ll x;   cin >> x;
-    mp[x]++;
-   }
+    ll n;
+    cin >> n;
+    map<ll, ll> mp;
+    ll mxElement = 0;
+    while (n--)
+    {
+        ll x;
+        cin >> x;
+        mxElement = max(mxElement, x);
+        mp[x]++;
+    }
 
-   ll cnt = 0;
-   for(auto [ key, value]: mp){
-    
-    
-   }
+    ll cnt = 0, mxFreq = 0;
+    for (auto [key, value] : mp)
+    {
+        if (value == 1)
+            cnt++;
+        mxFreq = max(mxFreq, value);
+    }
 
+    if (cnt != 1)
+    {
+        cout << (cnt + 1) / 2 << nl;
+        return;
+    }
+
+    if (mp[mxElement] == 1)
+    {
+        if (mxFreq > 2)
+        {
+            cout << 1 << nl;
+        }
+        else
+        {
+            cout << 2 << nl;
+        }
+
+    }
+    else{
+        cout << 1 << nl;
+    }
 }
-int main ()
+int main()
 {
     fastIO();
-    testCase{
+    testCase
+    {
 
         solve();
     }
