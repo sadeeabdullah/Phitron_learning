@@ -1,58 +1,80 @@
+// Bismillah hir rahmanir rahim
+// keep Patience, Destiny is more beautiful
+
 #include <bits/stdc++.h>
+
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+
+#define ll long long int
+#define llmax LLONG_MAX
+#define nl '\n'
+#define fastIO()  ios::sync_with_stdio(false); cin.tie(NULL);
+#define yes cout << "YES" << nl;
+#define no cout << "NO" << nl;
+#define loop(start, end, var) for (int var = (start); var <= (end); var++)
+#define rsORT(var) sort(var.rbegin(), var.rend())
+#define sORT(var) sort(var.begin(), var.end())
+#define tStr(var) string var; cin >> var;
+#define testCase  int t; cin >> t;while (t--)
+
+using namespace __gnu_pbds;
+
 using namespace std;
-#define ll long long
-vector<bool> is_prime(1000, true);
-void Sieve(ll n)
-{ // TC: O(nloglogn)
-    for (ll p = 2; p <= n; p++)
-    {
-        if (is_prime[p])
-        {
-            // prime.push_back(p);
-            for (ll i = p * p; i <= n; i += p)
-            {
-                is_prime[i] = false;
+
+template <typename T>
+using pbds = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
+
+
+vector<ll> composite;
+vector<bool> precompute(201, true);
+
+void sieve(ll n){
+    composite.push_back(1);
+    composite.push_back(0);
+    precompute[0] = precompute[1] = false;
+    for(ll i = 2; i <= n; i++){
+        if(precompute[i]){
+            for(ll j = i * i; j <= n; j+=i){
+                if(precompute[j]){
+                    precompute[j] = false;
+                composite.push_back(j);
+                }
             }
         }
     }
 }
-int main()
+
+
+void solve()
 {
-    Sieve(500);
-    int tc = 1;
-    cin >> tc;
-    while (tc--)
-    {
-        int n;
-        cin >> n;
-        int e1 = -1, e2 = -1, o1 = -1, o2 = -1;
-        vector<int> a(n);
-        for (int i = 0; i < n; i++)
-        {
-            cin >> a[i];
-            if (a[i] & 1)
-            {
-                if (o1 == -1)
-                    o1 = i;
-                else if (!(a[o1] == 1 && a[i] == 1))
-                    o2 = i;
-            }
-            else
-            {
-                if (e1 == -1)
-                    e1 = i;
-                else
-                    e2 = i;
+    ll n;   cin >> n;
+    vector<ll> a(n + 1);    for(ll i = 1; i <= n; i++)  cin >> a[i];
+
+    map<ll,ll> loc;     // store value and idx
+    for(ll i = 1; i <= n; i++){
+        ll val = a[i];
+        for(ll j = 0; j <= composite.size(); j++){
+            auto it = loc.find(composite[j] - a[i]);
+            if(it != loc.end()){
+                cout << loc[composite[j] - a[i]] << " " << i << nl;
+                return;
             }
         }
-        if (e1 != -1 && e2 != -1)
-            cout << e1 + 1 << " " << e2 + 1 << endl;
-        else if (o1 != -1 && o2 != -1)
-            cout << o1 + 1 << " " << o2 + 1 << endl;
-        else if (e1 != -1 && o1 != -1 && !is_prime[a[e1] + a[o1]])
-            cout << e1 + 1 << " " << o1 + 1 << endl;
-        else
-            cout << -1 << endl;
+        loc[val] = i;
+    }
+
+    cout << -1 << nl;
+}
+int main()
+{
+    fastIO();
+
+    sieve(200);
+
+    testCase
+    {
+        solve();
     }
     return 0;
 }
