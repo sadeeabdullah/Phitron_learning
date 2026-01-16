@@ -9,6 +9,7 @@
 
 #define ll long long int
 #define llmax LLONG_MAX
+#define llmin LLONG_MIN
 #define nl '\n'
 #define fastIO()  ios::sync_with_stdio(false); cin.tie(NULL);
 #define yes cout << "YES" << nl;
@@ -36,16 +37,24 @@ void solve()
         mp[x]++;
     }
 
-    ll mn = llmax;
-    for(auto [val, cnt] : mp){
-        mn = min(mn, cnt);
-    }
-    
-    ll ans = 0;
-    for(auto [val, cnt] : mp){
-        ans += ((cnt >= mn) ? 1: 0);
-    }
-    cout << ans <<nl;
+  // we will see if we take 1 time 2 time or 3 time or go oooo n time then what will be the maximum sub sequent
+
+  ll mxtimes = 0;
+  for(auto [val, cnt] : mp){
+        mxtimes = max(mxtimes, cnt);
+  }
+  ll ans = 0;
+  for(ll times = 1; times <= mxtimes; times++)
+  {
+    ll tmpAns = 0;
+      for(auto [val, cnt] : mp){
+          if(cnt >= times){
+            tmpAns += times;
+          }
+      }
+      ans = max(ans, tmpAns);
+  }
+  cout << ans << nl;
     
 }
 int main()
