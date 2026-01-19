@@ -1,8 +1,3 @@
-**This text is bold**
-# Big Title
-## Medium Title
-### Smaller Title
-
 
 **Monotonic Function**
 -----------------------
@@ -19,3 +14,10 @@ It alwasy increases.
 
 **If we find monotonic vibe on any problem then we can Binary Search on answer on it.**
 
+-------
+*Interesting thing in c++*
+--------
+You can write function into the main function. This function is called Lamda function.
+```auto ok = [&] (parameter here){         // here & take the access of the main function
+    //function body
+};  ```    
