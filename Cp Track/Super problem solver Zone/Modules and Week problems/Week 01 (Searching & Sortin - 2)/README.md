@@ -18,6 +18,6 @@ It alwasy increases.
 *Interesting thing in c++*
 --------
 You can write function into the main function. This function is called Lamda function.
-```auto ok = [&] (parameter here){         // here & take the access of the main function
+auto ok = [&] (parameter here){         // here & take the access of the main function
     //function body
-};  ```    
+};     
