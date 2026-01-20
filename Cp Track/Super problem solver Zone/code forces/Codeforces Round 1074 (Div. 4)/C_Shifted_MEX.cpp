@@ -43,28 +43,6 @@ void solve()
     ll n;   cin >>n;
     vector<ll> minus;
     vector<ll> a(n); for(ll i =0 ;i < n; i++)   cin>> a[i];
-
-    // ll mn = llmax;
-    // for(ll val : a){
-    //     if(val >= 0)
-    //     mn = min(val, mn);
-    //     else{
-    //         minus.push_back(val);
-    //     }
-    // }
-
-    // sORT(a);
-    // ll ans = LLONG_MIN;
-    // if( minus.empty()){
-    //     ans = min (ans,getMex(a, n, mn));
-    // }
-    // else{
-
-    //     for(ll v : minus){
-    //         // cout << v << nl;
-    //         ans = max(ans, getMex(a,n,-v));
-    //     }
-    // }
     sORT(a);
 
     ll ans = LLONG_MIN;

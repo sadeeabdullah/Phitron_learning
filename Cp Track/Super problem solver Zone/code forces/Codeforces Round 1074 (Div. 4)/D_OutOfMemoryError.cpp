@@ -29,30 +29,27 @@ void solve()
 {
     ll n, m, h;     cin >> n >> m >> h;
     vector<ll> a(n);    for(ll  i = 0; i < n; i++)  cin>>a[i];
-    vector<ll> org = a;
-
+    
+    vector<ll> tmp = a;
+    vector<ll> idx;
     while(m--){
-        ll b, c;    cin>> b >> c;
+        ll b, c;    cin >> b >> c;
         b--;
-        vector<ll> tmp = a;
-        tmp[b] = tmp[b] + c;
-
-        bool haveCrushed = false;
-        
-        for(ll i = 0;i < n; i++){
-            if(tmp[i] > h){
-                haveCrushed = true;
-                break;
-            }
+        if(a[b] + c > h){
+            for(ll i : idx)
+                a[i] = tmp[i];
+            
+            // after setting removes all the idx that changes
+            idx.clear();
+        }else{
+            // do the operation
+            a[b] += c;
+            idx.push_back(b);
         }
-
-        if(haveCrushed) a = org;
-        else a = tmp;
     }
 
-    for(ll val : a){
+    for(ll val : a)
         cout << val << " ";
-    }
     cout << nl;
 
 }
