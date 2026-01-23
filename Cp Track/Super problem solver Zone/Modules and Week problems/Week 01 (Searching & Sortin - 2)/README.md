@@ -28,7 +28,7 @@ auto ok = [&] (parameter here){         // here & take the access of the main fu
 **Problem Solution Approach**
 ----
 ----
-*Maximum Median*
+*[Maximum Median](https://codeforces.com/problemset/problem/1201/C)*
 -----
 Median is the middle value after sorting the array (we are having odd number of value here so need to worry about the median).
 
@@ -55,3 +55,6 @@ And check What maximum med we can get using the much operation. We have to count
 ---
 We have to check the last Index of deleting character from the string and print it.
 Seems simple but it is not simple when the constrain is pretty high. Deleting and comparing cost a Huge amoung of time complexity.
+
+Also here we can also find a monotonical vibes.
+If we choose any index and find it is possible answer then the left sides element also uses as an answer.
