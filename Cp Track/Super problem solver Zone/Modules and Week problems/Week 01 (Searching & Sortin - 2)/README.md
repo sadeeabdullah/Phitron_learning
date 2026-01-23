@@ -26,7 +26,7 @@ auto ok = [&] (parameter here){         // here & take the access of the main fu
 
 ------
 **Problem Solution Approach**
-----
+
 ----
 *[Maximum Median](https://codeforces.com/problemset/problem/1201/C)*
 -----
@@ -48,6 +48,7 @@ Now the constrain for K is 10^9 at most. So, if we are thinking of trying runnin
 If we take any other example and check it then we will agree that if has a monotonical vibe(the operation is propostional to the median). So here we can use Binary Search on Result.
 And check What maximum med we can get using the much operation. We have to count the operation and search on it.
 
+*[code](https://github.com/sadeeabdullah/Phitron_learning/blob/main/Cp%20Track/Super%20problem%20solver%20Zone/Modules%20and%20Week%20problems/Week%2001%20(Searching%20%26%20Sortin%20-%202)/C_Maximum_Median.cpp)*
 
 ---
 
@@ -63,3 +64,7 @@ As we have the monotonic vibes we will use Binary Search on Answer here.
 We will also use Bool vector to track the Deleting character according their index.
 Then we can check that if we have the target string sequence into the main  array or not.
 By seeing the code it will help you to understand.
+
+*[code](https://github.com/sadeeabdullah/Phitron_learning/blob/main/Cp%20Track/Super%20problem%20solver%20Zone/Modules%20and%20Week%20problems/Week%2001%20(Searching%20%26%20Sortin%20-%202)/F_String_Game.cpp)*
+
+----
