@@ -47,3 +47,11 @@ Now the constrain for K is 10^9 at most. So, if we are thinking of trying runnin
 
 If we take any other example and check it then we will agree that if has a monotonical vibe(the operation is propostional to the median). So here we can use Binary Search on Result.
 And check What maximum med we can get using the much operation. We have to count the operation and search on it.
+
+
+---
+
+*[string Game](https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/F)*
+---
+We have to check the last Index of deleting character from the string and print it.
+Seems simple but it is not simple when the constrain is pretty high. Deleting and comparing cost a Huge amoung of time complexity.
