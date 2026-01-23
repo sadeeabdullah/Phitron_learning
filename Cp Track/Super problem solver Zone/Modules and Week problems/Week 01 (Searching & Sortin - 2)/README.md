@@ -58,3 +58,7 @@ Seems simple but it is not simple when the constrain is pretty high. Deleting an
 
 Also here we can also find a monotonical vibes.
 If we choose any index and find it is possible answer then the left sides element also uses as an answer.
+
+As we have the monotonic vibes we will use Binary Search on Answer here.
+We will also use Bool vector to track the Deleting character according their index.
+By seeing the code it will help you to understand.
