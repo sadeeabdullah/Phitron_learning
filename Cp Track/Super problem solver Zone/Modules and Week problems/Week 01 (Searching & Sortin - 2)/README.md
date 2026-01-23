@@ -40,7 +40,8 @@ Let's take an given example:
                             idx -->   1    2    3    4   5   6  7
                                       1    2    3    4   4   4  4
                                       1    2    3    5   5   5  5 (INCREASING BY ONE THAT   MAKES 4 OPERATION)
-                                      1    2    3    5   6   6  6    (HERE 3 OPERATION)                        (increasing the part after the median because thats  only effect on the median)
+                                      1    2    3    5   6   6  6    (HERE 3 OPERATION)                        
+                                      (increasing the part after the median because thats  only effect on the median)
 ```
 Now the constrain for K is 10^9 at most. So, if we are thinking of trying running brute force we may end with TLE.
 
