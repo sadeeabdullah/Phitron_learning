@@ -32,9 +32,28 @@ void solve()
 {
     string t, p;    cin >> t >> p;
     ll t_size = t.size(), p_size = p.size();
+    ll x;
+    vector<ll> a(t_size);   for(ll i = 0;i < t_size; i++)   cin >> a[i];
+    auto ok = [&](ll mid){
+        vector<bool> deleted(t_size + 1);   // going to track the character
+        for(ll i=  0; i < mid; i++){
+            deleted[a[i]] = true;
+        }
 
+        // looking for the sub sequence
+        ll j = 0;
+        for(ll i = 0; i < t_size;i++){
+            if(t[i] == p[j] && !deleted[i + 1]){
+                j++;
+            }
+            if(j == p_size){
+                return true;
+            }
+        }
+        return false;
+    };
     // binary search part:
-    ll l = 0, r = t_size, ans, mid;
+    ll l = 0, r = t_size, ans = 0, mid;
     while(l <= r){
         mid = l + (r - l) / 2;
         if(ok(mid)){
@@ -43,16 +62,13 @@ void solve()
         }
         else r = mid- 1;
     }
-
+    cout << ans << nl;
 }
 int main()
 {
     fastIO();
 
-    testCase
-    {
         solve();
-    }
     return 0;
 }
 // author : Sadee Abdullah

@@ -61,4 +61,5 @@ If we choose any index and find it is possible answer then the left sides elemen
 
 As we have the monotonic vibes we will use Binary Search on Answer here.
 We will also use Bool vector to track the Deleting character according their index.
+Then we can check that if we have the target string sequence into the main  array or not.
 By seeing the code it will help you to understand.
