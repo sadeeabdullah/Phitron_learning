@@ -24,10 +24,12 @@ auto ok = [&] (parameter here){         // here & take the access of the main fu
 };     
 ```
 
-
+------
 **Problem Solution Approach**
-
+----
+----
 *Maximum Median*
+-----
 Median is the middle value after sorting the array (we are having odd number of value here so need to worry about the median).
 
 We need to maximize the median with K operation.
