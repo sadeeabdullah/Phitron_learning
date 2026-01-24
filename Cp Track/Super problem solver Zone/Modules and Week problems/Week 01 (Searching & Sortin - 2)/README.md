@@ -73,9 +73,11 @@ By seeing the code it will help you to understand.
 ---
 We have to inflates total N baloons with cooperation of M assistant and their Efficiency is given like:
 For each assistant we have data - 
-                                ``` ti --> minutes need to inflate one baloons.
+                                ```
+                                    ti --> minutes need to inflate one baloons.
                                     zi --> continious inflation without rest.
-                                    yi --> rest minutes after inflating zi baloons. ```
+                                    yi --> rest minutes after inflating zi baloons.
+                                     ```
 
 The should be working simultaneously. We have to print the how much time needed to inflate all the baloons and how many each assistant will inflate.
 
