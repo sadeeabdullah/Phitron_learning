@@ -68,3 +68,19 @@ By seeing the code it will help you to understand.
 *[code](https://github.com/sadeeabdullah/Phitron_learning/blob/main/Cp%20Track/Super%20problem%20solver%20Zone/Modules%20and%20Week%20problems/Week%2001%20(Searching%20%26%20Sortin%20-%202)/F_String_Game.cpp)*
 
 ----
+
+*[Children Holiday](https://codeforces.com/edu/course/2/lesson/6/2/practice/contest/283932/problem/D)*
+---
+We have to inflates total N baloons with cooperation of M assistant and their Efficiency is given like:
+For each assistant we have data - 
+                                ``` ti --> minutes need to inflate one baloons.
+                                    zi --> continious inflation without rest.
+                                    yi --> rest minutes after inflating zi baloons. ```
+
+The should be working simultaneously. We have to print the how much time needed to inflate all the baloons and how many each assistant will inflate.
+
+**here You can also find a monotonic vibe baloon count will be propostional to time.**
+
+Use binary search on the time and check.
+
+*[code](https://github.com/sadeeabdullah/Phitron_learning/blob/main/Cp%20Track/Super%20problem%20solver%20Zone/Modules%20and%20Week%20problems/Week%2001%20(Searching%20%26%20Sortin%20-%202)/D_Children_Holiday.cpp)*
