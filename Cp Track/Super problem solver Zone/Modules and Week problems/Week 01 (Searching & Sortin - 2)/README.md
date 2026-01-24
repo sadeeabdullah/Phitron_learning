@@ -116,6 +116,6 @@ We will find the range where we could find at least k non divisor of N.
 From the problem we have few information. The workshop have Only **Three** Carvers. Wood Festival is really close so **N** people will come to the shop with a request to make wooden toy differents of different Pattern and the pattern for *i-th people* will be a of i. Carvers can work on toys **simaltenously**.
 We have to Minimize the Maximum waiting time for toy delievery.
 
-**Approch** : We will try to make waiting Minimum so it could be 0 > 1 > 2 > 3... We will check how many carvers we need based on the maximum waiting period. When we got any maximum period that can done the work with three carver then we will check on the left waiting period.
+**Approach** : We will try to make waiting Minimum so it could be 0 > 1 > 2 > 3... We will check how many carvers we need based on the maximum waiting period. When we got any maximum period that can done the work with three carver then we will check on the left waiting period.
 
-*[code]()* code will help you to clear the approach.
+*[code](https://github.com/sadeeabdullah/Phitron_learning/blob/main/Cp%20Track/Super%20problem%20solver%20Zone/Modules%20and%20Week%20problems/Week%2001%20(Searching%20%26%20Sortin%20-%202)/D_Wooden_Toy_Festival.cpp)* code will help you to clear the approach.
