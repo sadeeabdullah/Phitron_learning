@@ -73,11 +73,11 @@ By seeing the code it will help you to understand.
 ---
 We have to inflates total N baloons with cooperation of M assistant and their Efficiency is given like:
 For each assistant we have data - 
-                                ```
+```
                                     ti --> minutes need to inflate one baloons.
                                     zi --> continious inflation without rest.
                                     yi --> rest minutes after inflating zi baloons.
-                                     ```
+```
 
 The should be working simultaneously. We have to print the how much time needed to inflate all the baloons and how many each assistant will inflate.
 
@@ -86,3 +86,28 @@ The should be working simultaneously. We have to print the how much time needed 
 Use binary search on the time and check.
 
 *[code](https://github.com/sadeeabdullah/Phitron_learning/blob/main/Cp%20Track/Super%20problem%20solver%20Zone/Modules%20and%20Week%20problems/Week%2001%20(Searching%20%26%20Sortin%20-%202)/D_Children_Holiday.cpp)*
+
+---
+
+*[kth not divisible](https://codeforces.com/problemset/problem/1352/C)*
+---
+The problem provides two integer N, K. We have to print the kth positive integer that is divisible by n.
+
+*how to determine how many number between a range is not divisible by N.
+```
+            Not divisible number count = Range(threshold) - (Range / N);
+            example:
+                N = 14;
+                Range = 1 to 13
+                Not divisible number count = 13 - (13 / 4) = 10
+                (1, 2, 3, 5, 6, 7, 9, 10, 11, 13) --> total 10
+```
+
+**Here we will kth non divisible value is propostional to k --> monotonic vibe**
+
+We will find the range where we could find at least k non divisor of N.
+
+*[code]()*
+
+---
+
