@@ -119,3 +119,13 @@ We have to Minimize the Maximum waiting time for toy delievery.
 **Approach** : We will try to make waiting Minimum so it could be 0 > 1 > 2 > 3... We will check how many carvers we need based on the maximum waiting period. When we got any maximum period that can done the work with three carver then we will check on the left waiting period.
 
 *[code](https://github.com/sadeeabdullah/Phitron_learning/blob/main/Cp%20Track/Super%20problem%20solver%20Zone/Modules%20and%20Week%20problems/Week%2001%20(Searching%20%26%20Sortin%20-%202)/D_Wooden_Toy_Festival.cpp)* code will help you to clear the approach.
+
+----
+
+*[Min Max MEX](https://codeforces.com/contest/2093/problem/E)*
+---
+We are given N -> the number of the element in the array and K --> the partition count we need to make on the array and get the maximum of the minimum mex among the k subarray.
+
+**Approach** : As the constrain is too long we need to optimize the code. At max we can get the ans Mex to be N and minimum we can get 0. We will run a Binary Search on answer and check that the ans Mex we are looking for can be achieved by the K partition  or not. We will check if the partition after getting desire answer mex is greater than we need then we will check for larger ans Mex Untill we get equal or closer to the desire partition and  maximum answer mex.
+
+*[code]()*
