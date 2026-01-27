@@ -128,4 +128,4 @@ We are given N -> the number of the element in the array and K --> the partition
 
 **Approach** : As the constrain is too long we need to optimize the code. At max we can get the ans Mex to be N and minimum we can get 0. We will run a Binary Search on answer and check that the ans Mex we are looking for can be achieved by the K partition  or not. We will check if the partition after getting desire answer mex is greater than we need then we will check for larger ans Mex Untill we get equal or closer to the desire partition and  maximum answer mex.
 
-*[code]()*
+*[code](https://github.com/sadeeabdullah/Phitron_learning/blob/main/Cp%20Track/Super%20problem%20solver%20Zone/Modules%20and%20Week%20problems/Week%2001%20(Searching%20%26%20Sortin%20-%202)/E_Min_Max_MEX.cpp)*

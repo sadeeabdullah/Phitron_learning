@@ -23,19 +23,38 @@ void EktakeDekhi()
     auto ok = [&](ll mid){
         ll mx = mid;
         // we will make sure we make the mx minimum of the array make k partition
-        ll partition= 0;
-        set<ll> s;
-        for(ll i = 0; i < n; i++){
-            if(a[i] < mid){
-                s.insert(a[i]);
+        ll partition= 0, distinct = 0;
+        vector<ll> vis(mid, 0);
+        for(ll i = 0; i < n;i++){
+            if(a[i] < mid && vis[a[i]] == 0){
+                vis[a[i]] = 1;
+                distinct++;
             }
-            if(s.size() == mid){
+            if(distinct == mid){
                 partition++;
-                s.clear();
+                fill(vis.begin(), vis.end(), 0);
+                distinct = 0;
             }
         }
         return partition >= k;
     };
+    
+    // auto ok = [&](ll mid){
+    //     ll mx = mid;
+    //     // we will make sure we make the mx minimum of the array make k partition
+    //     ll partition= 0;
+    //     set<ll> s;
+    //     for(ll i = 0; i < n; i++){
+    //         if(a[i] < mid){
+    //             s.insert(a[i]);          // got tle because of the inserting LOGN
+    //         }
+    //         if(s.size() == mid){
+    //             partition++;
+    //             s.clear();
+    //         }
+    //     }
+    //     return partition >= k;
+    // };
     
     ll l = 0, r= n, ans, mid;
     while(l <= r){
