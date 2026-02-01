@@ -38,7 +38,7 @@ It is basically the skeleton part of number writing with the multiplication of  
     3 / 2 = (no)
     3 / 3 = 1 (yes and when we get 1 then we are done)
 
-    so the prime factorization of 24 is   2 * 2 * 2 * 3.
+    so the prime factorization of 24 is   2 * 2 * 2 * 3;
 ```
 *smallest prime factorization (SPF)* : 
 Every existed numbers smallest divisor is a prime Number.
@@ -48,3 +48,47 @@ If you don't believe give it a try take any number.
 
 ---
 
+#Problem Solution Approach
+---
+
+*[Divide and Equalize](https://codeforces.com/problemset/problem/1881/D)*
+
+*Observation* : Given Array size of N we have to make all array element same through operation -> choose i, j index on the array and what we can do is replace a[i] to a[i] / x and a[j] * x (where x is a Divisor of a[i]). As we have to make the all the element equal then their prime factorization would be same as well.
+
+*Approach*: We can take all element prime factorization and check if we have divide all these divisor to every element or not (prime divisor of every element count % n == 0 or not).
+
+*example*:
+```
+    lets take 
+            30 50 27 20;
+    prime factorization of these element:
+            30 -> 2 * 3 * 5
+            50 -> 2 * 5 * 5
+            27 -> 3 * 3 * 3
+            20 -> 2 * 5 * 2
+    Now what we can do is make all the prime factorizatin equal by interchanging the factors.
+            2 * 3 * 5 -> 30 
+            2 * 5 * 3 -> 30
+            2 * 3 * 5 -> 30
+            2 * 5 * 3 -> 30
+    Everyones becomes 30 By interchanging.
+
+Now is it really working as we we were given the operation?
+Yes, it is working as needed.
+Prime factorization is the skeleton form of a number we can have all the divisor of any number using these factors By taking different combinations multiplications.
+
+for Say we take 20 and 5.
+can we make it equal? 
+lets check it:
+    20 / 2(x) = 10
+    5 * 2(x) = 10.
+see its possible by this way.
+
+Or take 160 and 10
+    160 / 4(x) = 40
+    10 * 4 (x) = 40
+Here x is 4 which is 2 * 2(prime factor).
+```
+Hope You get it try with some example yourself.
+
+*[code]()*
