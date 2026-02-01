@@ -40,8 +40,11 @@ It is basically the skeleton part of number writing with the multiplication of  
 
     so the prime factorization of 24 is   2 * 2 * 2 * 3.
 ```
-*smallest prime factorization (SPF)*
+*smallest prime factorization (SPF)* : 
 Every existed numbers smallest divisor is a prime Number.
 If you don't believe give it a try take any number.
 
-*[code for spf]()*
+*[code for spf](https://github.com/sadeeabdullah/Phitron_learning/blob/main/Cp%20Track/Super%20problem%20solver%20Zone/Modules%20and%20Week%20problems/Week%2002%20(Math%20and%20Number%20Theory%20-%202)/primeFactorization_spf.cpp)*
+
+---
+
