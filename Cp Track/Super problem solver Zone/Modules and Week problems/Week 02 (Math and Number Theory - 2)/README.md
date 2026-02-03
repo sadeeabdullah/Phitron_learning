@@ -10,10 +10,12 @@ We will be covering the first three types here
 *Addition*
 Normal : A + B
 Modular : (A % mod + B % mod ) % mod
+
 ---
 *subtraction*
 Normal : A - B
 Modular : (A % mod - B % mod ) % mod        .// sometimes we get negative value here we will handle this in different way
+
 ---
 *Addition*
 Normal : A * B
@@ -92,3 +94,7 @@ Here x is 4 which is 2 * 2(prime factor).
 Hope You get it try with some example yourself.
 
 *[code](https://github.com/sadeeabdullah/Phitron_learning/blob/main/Cp%20Track/Super%20problem%20solver%20Zone/Modules%20and%20Week%20problems/Week%2002%20(Math%20and%20Number%20Theory%20-%202)/D_Divide_and_Equalize.cpp)*
+
+***Getting divisors from prime factorization*** : 
+Lets take a Number P and it's prime factorization is p1<sup>e1</sup>, p<sup>e2</sup>, p3<sup>e3</sup>......
+It's Divisor count will be = (e1 + 1) *(e2 + 1) *(e3 + 1).....
