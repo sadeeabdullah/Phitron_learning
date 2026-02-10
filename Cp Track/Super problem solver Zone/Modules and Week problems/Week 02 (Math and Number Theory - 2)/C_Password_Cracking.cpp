@@ -18,7 +18,7 @@ int query(deque<char> &s){
     return x;
 }
 
-int answer(deque<char> &s){
+void answer(deque<char> &s){
     cout << "! ";
     for(auto ch : s)    cout << ch;
     cout << endl;
