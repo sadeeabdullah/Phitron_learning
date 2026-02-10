@@ -13,7 +13,8 @@ const ll Mod = 1e9 + 7;
 int query(deque<char> &s){
     cout << "? ";
     for(auto ch : s)    cout << ch ;
-    cout.flush();
+    // cout.flush();
+    cout << endl;
     int x;  cin >> x;
     return x;
 }
