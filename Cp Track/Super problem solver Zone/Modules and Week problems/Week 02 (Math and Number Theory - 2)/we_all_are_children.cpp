@@ -14,23 +14,20 @@ void Puzzle_Out()
 {
     ll n;	cin >> n;
     vector<ll> a(n);
-    map<ll, ll> mp;
-    for(ll i = 0; i < n; i++){
-    	cin >>a[i];
-    	// mp[a[i]]++;
+    vector<ll> cnt(n + 1, 0);
+
+    vector<ll> ans(n + 1, 0);
+
+    for(ll i= 0; i < n; i++){
+    	ll x;	cin >> x;
+    	if(x <= n) cnt[x]++;
     }
 
-   	for(ll j = 0; j < n; j++)
-    for(ll i = 1; i <= n; i++){
-    	ll val = a[j] * i;
-		mp[val]++;
-    }
-    ll ans = 0;
-    for(auto [x, y] : mp){
-    	if(x <= n)
-        ans = max(ans, y);
-    }
-    cout << ans << nl;
+    for(ll i= 1; i <= n; i++)
+    	for(ll j = i; j <= n; j+= i) ans[j] += cnt[i];
+
+    ll res = *max_element(all(ans));
+	cout << res << nl;
 }
 int main()
 {
