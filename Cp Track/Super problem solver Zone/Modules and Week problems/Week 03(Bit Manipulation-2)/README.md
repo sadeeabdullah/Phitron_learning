@@ -30,4 +30,4 @@ what will be the subset lets rewrite their subset using bit mask
 
 	can you see any connection or similar something? Tada we get all the combination.
 
-	now let's make it more fantastic.. we have the binary of 0 - 7 as welll..... and more? how many sub set we got 2<sup>n</sup> and from what we have to start ? 0 so we have to go until 2<sup>n</sup> - 1
+	now let's make it more fantastic.. we have the binary of 0 - 7 as welll..... and more? how many sub set we got 2^n and from what we have to start ? 0 so we have to go until 2^n - 1
