@@ -1,5 +1,5 @@
 /**
- * problem link : https://codeforces.com/problemset/problem/1421/A
+ * problem link : https://codeforces.com/problemset/problem/2103/A
  * */
 
 		
@@ -16,8 +16,13 @@ const ll Mod = 1e9 + 7;
 
 void Puzzle_Out()
 {
-    int a, b;	cin >> a >> b;
-    cout << (a^b) << nl;
+    int n;	cin >> n;
+    set<int> a;
+    for(int i = 0; i < n; i++){
+    	int x;	cin >> x;
+    	a.insert(x);
+    }
+    cout << a.size() << nl;
 }
 int main()
 {
@@ -31,5 +36,4 @@ int main()
 
     return 0;
 }
-
 /* author : Sadee Abdullah */ 

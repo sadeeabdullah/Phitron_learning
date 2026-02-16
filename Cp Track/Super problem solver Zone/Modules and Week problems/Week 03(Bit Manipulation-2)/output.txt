@@ -1,6 +1,2 @@
-10
-13
-891
-18
-6237
-0
+3
+Printing on what index the pattern mathced : 0 9 12 

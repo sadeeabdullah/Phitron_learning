@@ -1,7 +1,3 @@
-/**
- * problem link : https://codeforces.com/problemset/problem/1421/A
- * */
-
 		
 /* Bismillah hir rahmanir rahim */
 
@@ -16,8 +12,24 @@ const ll Mod = 1e9 + 7;
 
 void Puzzle_Out()
 {
-    int a, b;	cin >> a >> b;
-    cout << (a^b) << nl;
+    int n;  cin >> n;
+    string s = to_string(n);
+    int ans = 0;
+
+    for(int i = 1; i < s.size(); i++)
+        ans += (1 << i);
+    // cout << ans << nl;
+
+    int bit = 0;
+    for(int i = s.size() - 1; i>= 0; i--){
+        // cout << s[i] ;
+        if(s[i] == '7'){
+            ans += (1 << bit);
+        }
+        bit++;
+    }
+    // for(char c : s)cout << c << nl;
+    cout << ans + 1 << nl;
 }
 int main()
 {
@@ -25,11 +37,10 @@ int main()
     cin.tie(NULL);
 
     int t = 1;
-    cin >> t;
+    // cin >> t;
     for (int tc = 1; tc <= t; tc++)
         Puzzle_Out();
 
     return 0;
 }
-
 /* author : Sadee Abdullah */ 
