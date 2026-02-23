@@ -30,6 +30,7 @@ void Puzzle_Out()
 
     // or we can check it at once
     ans = min((tmpAns - abs(a[1] - a[ 0])), (tmpAns - abs(a[n - 1] - a[n - 2])));
+    
     // we will check by removing each element
     for(int i=1; i < n - 1; i++){
     	ans = min(ans , (tmpAns - abs(a[i] - a[i - 1]) - abs(a[i] - a[i + 1]) + abs(a[i + 1] - a[i - 1])));

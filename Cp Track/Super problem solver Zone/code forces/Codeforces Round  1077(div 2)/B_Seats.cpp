@@ -34,7 +34,9 @@ void EktakeDekhi()
     }
 
     if(cnt0 > 0){
-        ans += (cnt0 + 1)/ 3;
+        // ans += (cnt0 + 1)/ 3;
+        ans += cnt0 / 3;
+        if(cnt0 % 3 == 2) ans++;
     }
 
     cnt0 = 0;
@@ -48,7 +50,9 @@ void EktakeDekhi()
 
 
     if(s[n - 1] == '0'){
-        ans+= (cnt0 + 1) / 3;
+        // ans+= (cnt0 + 1) / 3;
+        ans += cnt0 / 3;
+        if(cnt0 % 3 == 2) ans++;
     }
     cout << ans << nl;
 
