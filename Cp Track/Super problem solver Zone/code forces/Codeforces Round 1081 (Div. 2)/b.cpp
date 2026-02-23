@@ -17,27 +17,20 @@ void Puzzle_Out()
     cin >> s;
     int ones = count(s.begin(), s.end(), '1');
     int zeros = n - ones;
-    if(ones != 2 && n != zeros){
-    	cout << -1 << nl;
-    }else if (ones == 2 && n == 3){
-    	int loc = 0;
-    	for(int i = 0;i < n; i++){
-    		if(s[i] == '0') loc = i + 1;
-    	}
-    	cout << 1 << nl;
-    	cout << loc << nl;
-    }
-    else if(n == zeros){
-    	cout << 0 << nl;
+    if(ones % 2 == 0){
+        cout << ones << nl;
+        if(ones > 0){
+            for(int i = 0; i < n;i++)
+                if(s[i] == '1') cout << i + 1 << " ";
+            cout << nl;
+        }
+    }else if(zeros % 2){
+        cout << zeros << nl;
+        for(int i = 0; i < n;i++)
+            if(s[i] == '0') cout << i + 1 << " ";
+        cout << nl;
     }else{
-    	int f=0, se = 0;
-    	for(int i = 0; i < n; i++){
-    		if(f == 0 && s[i] == '1') f = i+ 1;
-    		else if(f != 0 && s[i] == '1') se = i + 1;
-    	}
-    	cout << 2 << nl;
-    	cout << f << " " << se << nl;
-    	// cout << s[1] << nl;
+        cout << -1 << nl;
     }
 }
 int main()
