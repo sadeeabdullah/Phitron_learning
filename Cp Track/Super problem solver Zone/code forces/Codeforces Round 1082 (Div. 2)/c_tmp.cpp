@@ -15,24 +15,21 @@ void Puzzle_Out()
     int n;	cin >> n;
     std::vector<int> a(n);
     for(int &i : a)	cin >> i;
-    vector<int> s;
+    // sort(all(a));
+    multiset<int> ml;
 	
 	int ans =  0;
 	for(int i =0; i < n;i++){
-		
-		while(!s.empty() && s.back() != a[i] - 1){
-			s.pop_back();
-		}
-		if(s.empty()){
+		int val  = a[i] - 1;
+		if(ml.find(val) == ml.end()){
 			ans++;
-			s.push_back(a[i]);
-		}else{
-						// cout <<a[i]<<" ";
-
-			s.push_back(a[i]);
+			ml.clear();
 		}
+		ml.insert(a[i]);
+
 	}
-	// cout << ans;
+	// cout << nl;
+	cout << ans;
 	cout << nl;
 }
 int main()

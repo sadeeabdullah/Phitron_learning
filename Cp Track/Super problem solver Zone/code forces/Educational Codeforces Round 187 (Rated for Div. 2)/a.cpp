@@ -12,28 +12,21 @@ const ll Mod = 1e9 + 7;
 
 void Puzzle_Out()
 {
-    int n;	cin >> n;
-    std::vector<int> a(n);
-    for(int &i : a)	cin >> i;
-    vector<int> s;
-	
-	int ans =  0;
-	for(int i =0; i < n;i++){
-		
-		while(!s.empty() && s.back() != a[i] - 1){
-			s.pop_back();
-		}
-		if(s.empty()){
-			ans++;
-			s.push_back(a[i]);
-		}else{
-						// cout <<a[i]<<" ";
-
-			s.push_back(a[i]);
-		}
-	}
-	// cout << ans;
-	cout << nl;
+    int n, m, d;	cin >>n >> m >> d;
+    // cout << d / m << nl;
+    int canHave = d / m;
+    // cout << canHave << " ";
+    if(canHave == 0){
+    	cout << n << nl;
+    	return;
+    }
+    if(n <= canHave){
+    	cout << 1 << nl;
+    	return;
+    }
+    int ans = n / (canHave + 1);
+    if(n % (canHave + 1) != 0 ) ans++;
+    cout <<  ans << nl;
 }
 int main()
 {
