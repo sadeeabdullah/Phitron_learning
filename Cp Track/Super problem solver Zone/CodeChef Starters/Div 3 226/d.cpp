@@ -1,4 +1,4 @@
-		
+        
 /* Bismillah hir rahmanir rahim */
 
 #include <bits/stdc++.h>
@@ -12,14 +12,15 @@ const ll Mod = 1e9 + 7;
 
 void Puzzle_Out()
 {
-    int n;	cin >> n;
-    std::vector<int> v(n);
-    int l= 0;
-    for(int i = 0; i < n; i++){
-    	cin >> v[i];
-    	l |= v[i];
-    }
-    cout << l << nl;
+    int n;  cin >> n;
+    vector<int> a(n);
+    for(auto &i:a)cin>>i;
+    sort(all(a));
+    for(int i = 0; i < n-1; i++)while(a[i] *2<=a[n-1]) a[i]*=2;
+    sort(all(a));
+    int ans=a[n-1]-a[0];
+    for(int i =0; i<n-1;i++)  ans =min(ans, (a[i] *2)-a[i+1]);
+    cout<<ans<<nl;
 }
 int main()
 {
